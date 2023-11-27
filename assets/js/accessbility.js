@@ -7,6 +7,8 @@ var menuObject = {
     show_changefont: false,
     increase_font: false,
     decrease_font:false,
+    is_inverted:false,
+    
     initialState:{
       font: 28,
       brightness: 100,
@@ -119,10 +121,10 @@ var menuObject = {
   $(".modal-btn3").on("click", function () {
     menuObject.show_images = !menuObject.show_images;
     if (menuObject.show_images) {
-      $(".modal-btn3").html(`<iconify-icon icon="ion:image-sharp"></iconify-icon>Show Images`)
+      $(".modal-btn3").html(`<iconify-icon icon="ion:image-sharp"></iconify-icon>Show-Images`)
       $("img").attr("style", `display: none !important;`);
     } else {
-      $(".modal-btn3").html(`<iconify-icon icon="ion:image-sharp"></iconify-icon>Hide Images`)
+      $(".modal-btn3").html(`<iconify-icon icon="ion:image-sharp"></iconify-icon>Hide-Images`)
       $("img").attr("style", `display: inline-block !important;`);
     }
   
@@ -220,7 +222,18 @@ $(".modal-btn.reading-line").on("click", function () {
   
   
   function resetChanges() {
-  
+
+    $(".modal-btn1").html(`Increase Font`);
+    $(".modal-btn2").html(`Bigger Cursor`);
+    $(".modal-btn3").html(`Hide-Images`);
+    $(".reading-line").html(`Reading Line`);
+    $(".changefont").html(`Dyslexic Font`);
+    $(".brightness").html(`Brightness`);
+    $(".contrast").html(`Contrast`);
+    $(".saturation").html(`Saturation`);
+    $(".grayscale").html(`Grayscale`);
+    $(".appreadingmask").html(`App Reading Mask`);
+
     let initialState = {
       font: 28,
       brightness: 100,
@@ -251,7 +264,7 @@ $(".modal-btn.reading-line").on("click", function () {
       `brightness(${initialState.brightness}%) contrast(${initialState.contrast}%) saturate(${initialState.saturation}%) grayscale(${initialState.grayscaleValue}%)`
     );
     $("body").css("line-height", initialState.lineheight);
-  
+
     // Reset background and font color
     $("body").css("background-color", initialState.backgroundColor);
     $("body").css("color", initialState.fontColor);
@@ -265,11 +278,24 @@ $(".modal-btn.reading-line").on("click", function () {
   
   
   $(".invert").on("click", function () {
-    let darkColor = "#000000"; // Change this to the dark color of your choice
-    $("body").css("background-color", darkColor);
-    $("body").css("color", darkColor); // Optional: change text color to contrast with background
-    $("h1").css("color", "#feb45d");
-    $("li").css("color", "#ffffff");
-    $("p").attr("style", `color: #ffffff;`);
+    menuObject.is_inverted = !menuObject.is_inverted;
+    if(menuObject.is_inverted){
+        $(".invert").html(`Normal color`);
+        let darkColor = "#000000"; // Change this to the dark color of your choice
+        $("body").css("background-color", darkColor);
+        $("body").css("color", darkColor); // Optional: change text color to contrast with background
+        $("h1").css("color", "#feb45d");
+        $("li").css("color", "#ffffff");
+        $("p").attr("style", `color: #ffffff;`);
+    }else{
+        $(".invert").html(`Invert`);
+        let darkColor = "#fff"; // Change this to the dark color of your choice
+        $("body").css("background-color", darkColor);
+        $("body").css("color", darkColor); // Optional: change text color to contrast with background
+        $("h1").css("color", "#000");
+        $("li").css("color", "#000");
+        $("p").attr("style", `color: #000;`);
+    }
+    
   });
   

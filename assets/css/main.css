@@ -102,6 +102,45 @@ body .accessibly-app-reading-mask-bottom {
   bottom: 0;
   top: auto;
 }
+.clients {
+  padding: 0 0 60px 0;
+}
+
+.clients .swiper-slide img {
+  opacity: 0.7;
+  transition: 0.3s;
+  /* filter: grayscale(100); */
+}
+
+.clients .swiper-slide img:hover {
+  filter: none;
+  opacity: 1;
+}
+
+.image-list {
+  padding: 0px;
+} 
+.image-list ul {
+  list-style: none; 
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.image-list ul li {
+  text-align: center;
+  display: flex;
+  margin: 0 15px 32px 15px;
+  width: 190px;
+  background: var(--Secondary-Color-2, #FFF);
+  box-shadow: 0px 9.75px 9.75px -4.875px rgba(94, 147, 202, 0.03), 0px 24.375px 29.25px -4.875px rgba(94, 147, 202, 0.08);
+  min-height: 100px;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+}
 /*--------------------------------------------------------------
 # Sections & Section Header
 --------------------------------------------------------------*/
