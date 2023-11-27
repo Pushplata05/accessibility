@@ -104,7 +104,7 @@
       <!-- <a class="btn-getstarted scrollto" href="index.html#about">Get Started</a> -->
     <!-- Button trigger modal -->
     <button type="button" class="btn btn-primary border-0 btn-getstarted scrollto" data-bs-toggle="modal" data-bs-target="#exampleModal">
-      Get Started
+      Accessbility Options
     </button>
         
 
@@ -722,25 +722,31 @@
       </div>
       <div class="modal-body">
         <div class="model-buttonwrap d-flex flex-row flex-wrap justify-content-between">
-          <button type="button" class="btn btn-primary">Bigger Text</button>
-          <button type="button" class="btn btn-primary">Primary</button>
-          <button type="button" class="btn btn-primary">Primary</button>
-          <button type="button" class="btn btn-primary">Primary</button>
-          <button type="button" class="btn btn-primary">Primary</button>
-          <button type="button" class="btn btn-primary">Primary</button>
-          <button type="button" class="btn btn-primary">Primary</button>
-          <button type="button" class="btn btn-primary">Primary</button>
+          <button type="button" class="btn btn-primary  modal-btn1">Bigger Text</button>
+          <button type="button" class="btn btn-primary modal-btn2">Bigger-cursor</button>
+          <button type="button" class="btn btn-primary modal-btn3">Hide-images</button>
+          <button type="button" class="btn btn-primary reading-line">Reading-line</button>
+          <button type="button" class="btn btn-primary changefont">Dyslexic Font</button>
+          <button type="button" class="btn btn-primary brightness">Brightness</button>
+          <button type="button" class="btn btn-primary invert">Invert</button>
+          <button type="button" class="btn btn-primary lineheight">Line-height</button>
+          <button type="button" class="btn btn-primary contrast">Contrast</button>
+          <button type="button" class="btn btn-primary saturation">Saturation</button>
+          <button type="button" class="btn btn-primary grayscale">Grayscale</button>
+
+          <button type="button" class="btn btn-primary appreadingmask">App Reading mask</button>
         </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-success reset-btn">Reset Settings</button>
       </div>
     </div>
   </div>
 </div>
 
   <!-- Vendor JS Files -->
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
@@ -749,8 +755,14 @@
   <script src="assets/vendor/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
+  
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/accessbility.js"></script>
+ 
 
+  <div class="accessibility_line"></div>
+  <div class="accessibly-app-reading-mask-top accessibly-app-reading-mask" style="height: 200px;"></div>
+  <div class="accessibly-app-reading-mask-bottom accessibly-app-reading-mask" style="height: 11px;"></div>
 </body>
 
 </html>
