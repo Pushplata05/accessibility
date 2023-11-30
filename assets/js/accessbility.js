@@ -8,7 +8,7 @@ var menuObject = {
     increase_font: false,
     decrease_font:false,
     is_inverted:false,
-    
+   hide_animation: false,
     initialState:{
       font: 28,
       brightness: 100,
@@ -104,8 +104,34 @@ var menuObject = {
   
     updateFontStyles();
   });
-  
-  
+  $(".removeanimation").on("click", function () {
+    menuObject.hide_animation = !menuObject.hide_animation;
+
+    if (menuObject.hide_animation) {
+        $(".removeanimation").html(`Show Animation `);
+        $('img').removeClass('animated');
+        $("body, h1, p, div, header, section ").removeAttr("data-aos");
+      } else {
+        $(".removeanimation").html(`Hide Animation`);
+        $('img').addClass('animated');
+        // $("h1, p, div, header, section ").attr("data-aos", 'zoom-out');
+      }
+    updateFontStyles();
+  });
+//   $(".removeanimation").on("click", function () {
+//     menuObject.hide_animation = !menuObject.hide_animation;
+
+//     if (menuObject.hide_animation) {
+//         $(".removeanimation").html(`Show Animation `);
+//         $('img').removeClass('animated');
+//         $("body, h1, p, div, header, section ").removeAttr("data-aos");
+//       } else {
+//         $(".removeanimation").html(`Hide Animation`);
+//         $('img').addClass('animated');
+//         // $("h1, p, div, header, section ").attr("data-aos", 'zoom-out');
+//       }
+//     updateFontStyles();
+//   });
   // ------------------------------Currsor-btn-2-------- bigger_curso : true/ false-----------------------
   $(".modal-btn2").on("click", function () {
     menuObject.bigger_cursor = !menuObject.bigger_cursor;
