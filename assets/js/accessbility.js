@@ -89,7 +89,8 @@ var menuObject = {
     menuObject.increase_font = tempstate.font < 50 && !menuObject.decrease_font;
   
     if (menuObject.increase_font) {
-      tempstate.font += 5;
+      // Increase the font size by 10
+      tempstate.font += 10;
       $(".modal-btn1").html(`<iconify-icon icon="fluent:line-horizontal-1-24-filled"></iconify-icon>Increase Font`);
     } else {
       tempstate.font -= 5;
@@ -102,8 +103,11 @@ var menuObject = {
     // Set menuObject.decrease_font based on the current font size
     menuObject.decrease_font = tempstate.font > 28;
   
+    // Update font styles using your custom function (assuming it's defined)
     updateFontStyles();
   });
+  
+  
   $(".removeanimation").on("click", function () {
     menuObject.hide_animation = !menuObject.hide_animation;
 
@@ -310,9 +314,11 @@ $(".modal-btn.reading-line").on("click", function () {
         let darkColor = "#000000"; // Change this to the dark color of your choice
         $("body").css("background-color", darkColor);
         $("body").css("color", darkColor); // Optional: change text color to contrast with background
-        $("h1").css("color", "#feb45d");
+        $("h1,h2,h3,h4,h5,h6").css("color", "#feb45d");
+        // $("").css("color", "#feb45d");
         $("li").css("color", "#ffffff");
         $("p").attr("style", `color: #ffffff;`);
+        $("a").attr("style", `color: #231c98;`);
     }else{
         $(".invert").html(`Invert`);
         let darkColor = "#fff"; // Change this to the dark color of your choice
