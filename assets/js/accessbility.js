@@ -88,9 +88,8 @@ var menuObject = {
     // Set menuObject.increase_font based on the current font size
     menuObject.increase_font = tempstate.font < 50 && !menuObject.decrease_font;
   
-    if (menuObject.increase_font) {
-      // Increase the font size by 10
-      tempstate.font += 10;
+    if (menuObject.increase_font) { 
+      tempstate.font += 5;
       $(".modal-btn1").html(`<iconify-icon icon="fluent:line-horizontal-1-24-filled"></iconify-icon>Increase Font`);
     } else {
       tempstate.font -= 5;
@@ -103,11 +102,9 @@ var menuObject = {
     // Set menuObject.decrease_font based on the current font size
     menuObject.decrease_font = tempstate.font > 28;
   
-    // Update font styles using your custom function (assuming it's defined)
     updateFontStyles();
   });
-  
-  
+   
   $(".removeanimation").on("click", function () {
     menuObject.hide_animation = !menuObject.hide_animation;
 
@@ -191,7 +188,7 @@ $(".modal-btn.reading-line").on("click", function () {
         // Unbind the mousemove event if line is removed
         $(document).off("mousemove");
     }
-  });
+  });     
   
   
   // -------------------------------changefont--------------------------------------
