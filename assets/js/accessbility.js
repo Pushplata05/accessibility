@@ -69,26 +69,26 @@ var menuObject = {
           height: newBottom + "px",
         });
       });
+      $(".appreadingmask").html(`<iconify-icon icon="fluent:line-horizontal-1-24-filled"></iconify-icon>Remove-mask`);
     } else {
-     
+      $(".appreadingmask").html(`<iconify-icon icon="fluent:line-horizontal-1-24-filled"></iconify-icon>App reading-mask`);
       myDivTop.css({ top: "0px", height: "0px" });
       myDivBottom.css({ height: "0px" });
       readingMask.css({ "z-index": -9999999 });
     }
   }
-  
-  
-  // Function to update font styles
+   
+  // Function to update font style  s
   function updateFontStyles() {
     $("body, h1, p").attr("style", `font-family: ${tempstate.fontfamily}; font-size: ${tempstate.font}px !important;`);
   }
-  
+
   // Font size increment/decrement logic
   $(".modal-btn1").on("click", function () {
     // Set menuObject.increase_font based on the current font size
     menuObject.increase_font = tempstate.font < 50 && !menuObject.decrease_font;
-  
-    if (menuObject.increase_font) { 
+   
+    if (menuObject.increase_font) {  
       tempstate.font += 5;
       $(".modal-btn1").html(`<iconify-icon icon="fluent:line-horizontal-1-24-filled"></iconify-icon>Increase Font`);
     } else {
@@ -189,9 +189,7 @@ $(".modal-btn.reading-line").on("click", function () {
         $(document).off("mousemove");
     }
   });     
-  
-  
-  // -------------------------------changefont--------------------------------------
+   // -------------------------------changefont--------------------------------------
   
   $(".changefont").on("click", function () {
     menuObject.show_changefont = !menuObject.show_changefont;
@@ -210,7 +208,6 @@ $(".modal-btn.reading-line").on("click", function () {
         $("body, h1, p").attr("style", `font-family: ${menuObject.initialState.fontfamily}; font-size: ${menuObject.initialState.font}px !important;`);
     }
   });
-  
   
   // ---------------------------------change-fontend-------------
   $(".brightness").on("click", function () {
@@ -257,7 +254,7 @@ $(".modal-btn.reading-line").on("click", function () {
     $(".changefont").html(`Dyslexic Font`);
     $(".brightness").html(`Brightness`);
     $(".contrast").html(`Contrast`);
-    $(".saturation").html(`Saturation`);
+    $(".saturation").html(`Saturation`); 
     $(".grayscale").html(`Grayscale`);
     $(".appreadingmask").html(`App Reading Mask`);
 
@@ -287,7 +284,7 @@ $(".modal-btn.reading-line").on("click", function () {
     $("img").attr("style", `display: inline-block !important;`);
     // Reset brightness, contrast, saturation, grayscale, line height
     $("html").css(
-      "filter",
+      "filter",0
       `brightness(${initialState.brightness}%) contrast(${initialState.contrast}%) saturate(${initialState.saturation}%) grayscale(${initialState.grayscaleValue}%)`
     );
     $("body").css("line-height", initialState.lineheight);
@@ -327,4 +324,10 @@ $(".modal-btn.reading-line").on("click", function () {
     }
     
   });
+  
+
+
+
+  // --------------------------------------------------------------------
+
   
