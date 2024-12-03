@@ -1,725 +1,942 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Accessibility</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+    <!-- Favicons -->
+    <link
+      href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDeDz-Nho9jeplodi9s3GUZUaoTBV8dKkBfmq1XZKe4Q&s"
+      rel="icon"
+    />
+    <!-- <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"> -->
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Vendor CSS Files -->
+    <link
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+    <link
+      href="assets/vendor/glightbox/css/glightbox.min.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+    <link href="assets/css/variables-purple.css" rel="stylesheet" />
 
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link href="assets/css/main.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top" data-scrollto-offset="0">
+      <div class="container d-flex align-items-center justify-content-between">
+        <a
+          href="index.html"
+          class="logo d-flex align-items-center scrollto me-auto me-lg-0"
+        >
+        <img src="./assets/img/logo-dummy.png" alt="Company Logo">
 
-  <title>Accessibility</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
-
-  <!-- Favicons -->
-  <link href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDeDz-Nho9jeplodi9s3GUZUaoTBV8dKkBfmq1XZKe4Q&s" rel="icon">
-  <!-- <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"> -->
-
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-  <!-- Variables CSS Files. Uncomment your preferred color scheme -->
-  <!-- <link href="assets/css/variables.css" rel="stylesheet"> -->
-  <!-- <link href="assets/css/variables-blue.css" rel="stylesheet"> -->
-  <!-- <link href="assets/css/variables-green.css" rel="stylesheet"> -->
-  <!-- <link href="assets/css/variables-orange.css" rel="stylesheet"> -->
-  <link href="assets/css/variables-purple.css" rel="stylesheet"> 
-  <!-- <link href="assets/css/variables-red.css" rel="stylesheet"> -->
-  <!-- <link href="assets/css/variables-pink.css" rel="stylesheet"> -->
-
-  <!-- Template Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
-</head>
-
-<body>
-
-  <!-- ======= Header ======= -->
-  <header id="header" class="header fixed-top" data-scrollto-offset="0">
-    <div class="container d-flex align-items-center justify-content-between">
-
-      <a href="index.html" class="logo d-flex align-items-center scrollto me-auto me-lg-0">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.png" alt="logo"> -->
-        <h1>Accessibility<span>.</span></h1>
-      </a>
-
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="active" href="index.html">Home</a></li>
-          <li><a class="nav-link scrollto" href="index.html#about">About</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li class="dropdown megamenu"><a href="#"><span>Mega Menu</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
-            <ul>
-              <li>
-                <a href="#">Column 1 link 1</a>
-                <a href="#">Column 1 link 2</a>
-                <a href="#">Column 1 link 3</a>
-              </li>
-              <li>
-                <a href="#">Column 2 link 1</a>
-                <a href="#">Column 2 link 2</a>
-                <a href="#">Column 3 link 3</a>
-              </li>
-              <li>
-                <a href="#">Column 3 link 1</a>
-                <a href="#">Column 3 link 2</a>
-                <a href="#">Column 3 link 3</a>
-              </li>
-              <li>
-                <a href="#">Column 4 link 1</a>
-                <a href="#">Column 4 link 2</a>
-                <a href="#">Column 4 link 3</a>
-              </li>
-            </ul>
-          </li>
-          <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
-            <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-            </ul>
-          </li>
-          <li><a class="nav-link scrollto" href="index.html#contact">Contact</a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle d-none"></i>
-      </nav><!-- .navbar -->
-
-      <!-- <a class="btn-getstarted scrollto" href="index.html#about">Get Started</a> -->
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary border-0 btn-getstarted scrollto" data-bs-toggle="modal" data-bs-target="#exampleModal">
-      Accessbility Options
-    </button>
-        
-
-    </div>
-  </header><!-- End Header -->
-
-  <section id="hero-animated" class="hero-animated d-flex align-items-center">
-    <div class="container d-flex flex-row justify-content-start align-items-center text-left position-relative" data-aos="zoom-out">
-      <div class="d-flex flex-column">
-        <h4>Welcome to Accessibility</h4>
-        <h1>WCAG to build a more accessible website</h1>
-        <p>Web accessibility is important because it’s ethical, leading to a more inclusive website.</p>
-        <div class="d-flex flex-row">
-          <a href="#about" class="btn-get-started scrollto">Get Started</a>
-          <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
-        </div>
-      </div>
-      <img src="assets/img/hero-carousel/hero-carousel-2.svg" class="img-fluid animated" alt="banner-image">    
-    </div>
-  </section>
-
-  <main id="main">
-
-    <!-- ======= Featured Services Section ======= -->
-    <section id="featured-services" class="featured-services">
-      <div class="container">
-
-        <div class="row gy-4">
-
-          <div class="col-xl-4 col-md-6 d-flex" data-aos="zoom-out" data-aos-delay="200">
-            <div class="service-item position-relative">
-              <h4><a href="" class="stretched-link"><span class="icon"><i class="bi bi-bounding-box-circles icon"></i> </span>Keyboard accessibility</a></h4>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-xl-4 col-md-6 d-flex" data-aos="zoom-out" data-aos-delay="200">
-            <div class="service-item position-relative">
-              <h4><a href="" class="stretched-link"><span class="icon"><i class="bi bi-bounding-box-circles icon"></i></span> Consistent navigation</a></h4>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-xl-4 col-md-6 d-flex" data-aos="zoom-out" data-aos-delay="400">
-            <div class="service-item position-relative">
-              <h4><a href="" class="stretched-link"><span class="icon"><i class="bi bi-calendar4-week icon"></i></span>Accessible hyperlinks</a></h4>
-            </div>
-          </div><!-- End Service Item -->
-
-        </div>
-
-      </div>
-    </section><!-- End Featured Services Section -->
-
-    <!-- ======= About Section ======= -->
-    <section id="about" class="about">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-header">
-          <h2>Why Seven Accounting?</h2>
-        </div>
-        <div class="row g-4 g-lg-5 mb-5 d-flex align-items-center" data-aos="fade-up" data-aos-delay="200">
-          <div class="col-lg-5">
-            <div class="about-img">
-              <img src="assets/img/about-section.svg" class="img-fluid" alt="about">
-            </div>
-          </div>
-
-          <div class="col-lg-7">
-             <h3>One-on-one expert support</h3>
-             <p>Phasellus aliquam vehicula mauris et elementum. Sed nisl risus, maximus non tortor vel, vestibulum condimentum ipsum. Ut convallis molestie imperdiet. Sed scelerisque sodales elementum. Morbi at leo tortor. Etiam quis gravida nunc, id euismod risus. Morbi id viverra dui.</p>
-          </div>
-        </div>
-
-        <div class="row g-4 g-lg-5 mb-5 d-flex align-items-center" data-aos="fade-up" data-aos-delay="200">
-          <div class="col-lg-7">
-             <h3>One-on-one expert support</h3>
-             <p>Phasellus aliquam vehicula mauris et elementum. Sed nisl risus, maximus non tortor vel, vestibulum condimentum ipsum. Ut convallis molestie imperdiet. Sed scelerisque sodales elementum. Morbi at leo tortor. Etiam quis gravida nunc, id euismod risus. Morbi id viverra dui.</p>
-          </div>
-          <div class="col-lg-5">
-            <div class="about-img">
-              <img src="assets/img/about1.svg" class="img-fluid" alt="about">
-            </div>
-          </div>
-        </div>
-
-        <div class="row g-4 g-lg-5 mb-5 d-flex align-items-center" data-aos="fade-up" data-aos-delay="200">
-          <div class="col-lg-5">
-            <div class="about-img">
-              <img src="assets/img/about2.svg" class="img-fluid" alt="about">
-            </div>
-          </div>
-
-          <div class="col-lg-7">
-             <h3>One-on-one expert support</h3>
-             <p>Phasellus aliquam vehicula mauris et elementum. Sed nisl risus, maximus non tortor vel, vestibulum condimentum ipsum. Ut convallis molestie imperdiet. Sed scelerisque sodales elementum. Morbi at leo tortor. Etiam quis gravida nunc, id euismod risus. Morbi id viverra dui.</p>
-          </div>
-        </div>
-
-
-      </div>
-    </section>
-    
-    
-    
-    
-    
-    
-    
-    <!-- End About Section -->
-
-    <!-- ======= Clients Section ======= -->
-    <section id="clients" class="clients">
-      <div class="container">
-        <div class="section-header">
-          <h2>Trusted by</h2>
-        </div>
-        <div class="image-list">
-            <ul>
-              <li><a href="javascript:void(0)"><img src="https://infostride.com/wp-content/themes/infostride/assets-v5/images/accessibility/vip.png" class="img-fluid" alt="vip"></a></li>
-              <li><a href="javascript:void(0)"><img src="https://infostride.com/wp-content/themes/infostride/assets-v5/images/accessibility/ibm.png" class="img-fluid" alt="ibm"></a></li>
-              <li><a href="javascript:void(0)"><img src="https://infostride.com/wp-content/themes/infostride/assets-v5/images/accessibility/aws.png" class="img-fluid" alt="aws"></a></li>
-              <li><a href="javascript:void(0)"><img src="https://infostride.com/wp-content/themes/infostride/assets-v5/images/accessibility/microsoft-partners.png" class="img-fluid" alt="microsoft-partners"></a></li>
-              <li><a href="javascript:void(0)"><img src="https://infostride.com/wp-content/themes/infostride/assets-v5/images/accessibility/kwanzoo.png" class="img-fluid" alt="kwanzoo"></a></li>
-            </ul>
-            <ul>
-              <li><a href="javascript:void(0)"><img src="https://infostride.com/wp-content/themes/infostride/assets-v5/images/accessibility/wbenc.png" class="img-fluid" alt="wbenc"></a></li>
-              <li><a href="javascript:void(0)"><img src="https://infostride.com/wp-content/themes/infostride/assets-v5/images/accessibility/nmsdc.png" class="img-fluid" alt="nmsdc"></a></li>
-              <li><a href="javascript:void(0)"><img src="https://infostride.com/wp-content/themes/infostride/assets-v5/images/accessibility/sbawosb.png" class="img-fluid" alt="sbawosb"></a></li>
-              <li><a href="javascript:void(0)"><img src="https://infostride.com/wp-content/themes/infostride/assets-v5/images/accessibility/cmmi.png" class="img-fluid" alt="cmmi"></a></li>
-              <li><a href="javascript:void(0)"><img src="https://infostride.com/wp-content/themes/infostride/assets-v5/images/accessibility/iso.png" class="img-fluid" alt="iso"></a></li>
+        </a>
+        <nav id="navbar" class="navbar" aria-label="Main Navigation">
+          <ul>
+            <li>
+              <a class="active" href="index.html">Home</a>
+            </li>
+            <li>
+              <a class="nav-link scrollto" href="index.html#about">About</a>
+            </li>
+            <li>
+              <a class="nav-link scrollto" href="index.html#contact">Contact</a>
+            </li>
           </ul>
-          </div>
-      </div>   
-    </section><!-- End Clients Section -->
-
-
-
-
-
-    <!-- ======= Testimonials Section ======= -->
-    <section id="testimonials" class="testimonials">
-      <div class="container" data-aos="fade-up">
-
-        <div class="testimonials-slider swiper">
-          <div class="swiper-wrapper">
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                <h3>Saul Goodman</h3>
-                <h4>Ceo &amp; Founder</h4>
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-                <h3>Sara Wilsson</h3>
-                <h4>Designer</h4>
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-                <h3>Jena Karlis</h3>
-                <h4>Store Owner</h4>
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-                <h3>Matt Brandon</h3>
-                <h4>Freelancer</h4>
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-                <h3>John Larson</h3>
-                <h4>Entrepreneur</h4>
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-
+          <button
+            aria-label="Toggle mobile navigation"
+            class="bi bi-list mobile-nav-toggle d-none"
+          ></button>
+        </nav>
+        <!-- <a class="btn-getstarted scrollto" href="index.html#about">Get Started</a> -->
+        <!-- Button trigger modal -->
+        <button
+          type="button"
+          class="btn btn-primary border-0 btn-getstarted scrollto"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+        >
+          Accessbility Options
+        </button>
       </div>
-    </section><!-- End Testimonials Section -->
+    </header>
+    <!-- End Header -->
 
+    <main id="main">
+     
+      <!-- Start Hero Section -->
+      <section
+        id="hero-animated"
+        class="hero-animated d-flex align-items-center"
+        aria-labelledby="hero-heading"
+      >
+        <div
+          class="container d-flex flex-row justify-content-start align-items-center text-left position-relative"
+          data-aos="zoom-out"
+        >
+          <div class="d-flex flex-column">
+            <!-- Headings for clarity and structure -->
+            <h1>Building a More Accessible Website with WCAG</h1>
+            <p>
+              Web accessibility is essential for creating inclusive and ethical
+              online experiences, allowing everyone to access and engage with
+              content regardless of abilities.
+            </p>
+            <div
+              class="d-flex flex-row"
+              role="group"
+              aria-label="Hero section actions"
+            >
+              <a
+                href="#about"
+                class="btn-get-started scrollto"
+                aria-label="Get started with accessibility information"
+                >Get Started</a
+              >
+              <a
+                href="https://www.youtube.com/watch?v=LXb3EKWsInQ"
+                class="glightbox btn-watch-video d-flex align-items-center"
+                aria-label="Watch accessibility introduction video"
+              >
+                <i class="bi bi-play-circle" aria-hidden="true"></i>
+                <span>Watch Video</span>
+              </a>
+            </div>
+          </div>
 
-    <!-- ======= F.A.Q Section ======= -->
-    <section id="faq" class="faq">
-      <div class="container-fluid" data-aos="fade-up">
+          <!-- Banner image with alternative text -->
+          <img
+            src="assets/img/hero-carousel/hero-carousel-2.svg"
+            class="img-fluid animated"
+            alt="Illustration of people working on accessibility features"
+          />
+        </div>
+      </section>
+      <!-- End Hero Section -->
 
-        <div class="row gy-4">
+      <!-- ======= Featured Services Section ======= -->
+      <section
+        id="featured-services"
+        class="featured-services"
+        aria-labelledby="featured-services-heading"
+      >
+        <div class="container">
+          <h2 id="featured-services-heading" class="visually-hidden">
+            Featured Services
+          </h2>
+          <div class="row gy-4">
+            <!-- Service Item 1 -->
+            <div
+              class="col-xl-4 col-md-6 d-flex"
+              data-aos="zoom-out"
+              data-aos-delay="200"
+            >
+              <div class="service-item position-relative">
+                <h4>
+                  <a
+                    href="#"
+                    class="stretched-link"
+                    aria-label="Learn more about keyboard accessibility"
+                  >
+                    <span class="icon">
+                      <i
+                        class="bi bi-bounding-box-circles icon"
+                        aria-hidden="true"
+                      ></i>
+                    </span>
+                    Keyboard Accessibility
+                  </a>
+                </h4>
+              </div>
+            </div>
+            <!-- End Service Item -->
 
-          <div class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch  order-2 order-lg-1">
+            <!-- Service Item 2 -->
+            <div
+              class="col-xl-4 col-md-6 d-flex"
+              data-aos="zoom-out"
+              data-aos-delay="200"
+            >
+              <div class="service-item position-relative">
+                <h4>
+                  <a
+                    href="#"
+                    class="stretched-link"
+                    aria-label="Learn more about consistent navigation"
+                  >
+                    <span class="icon">
+                      <i
+                        class="bi bi-bounding-box-circles icon"
+                        aria-hidden="true"
+                      ></i>
+                    </span>
+                    Consistent Navigation
+                  </a>
+                </h4>
+              </div>
+            </div>
+            <!-- End Service Item -->
 
-            <div class="content px-xl-5">
-              <h3>Frequently Asked <strong>Questions</strong></h3>
+            <!-- Service Item 3 -->
+            <div
+              class="col-xl-4 col-md-6 d-flex"
+              data-aos="zoom-out"
+              data-aos-delay="400"
+            >
+              <div class="service-item position-relative">
+                <h4>
+                  <a
+                    href="#"
+                    class="stretched-link"
+                    aria-label="Learn more about accessible hyperlinks"
+                  >
+                    <span class="icon">
+                      <i
+                        class="bi bi-calendar4-week icon"
+                        aria-hidden="true"
+                      ></i>
+                    </span>
+                    Accessible Hyperlinks
+                  </a>
+                </h4>
+              </div>
+            </div>
+            <!-- End Service Item -->
+          </div>
+        </div>
+      </section>
+      <!-- End Featured Services Section -->
+
+      <!-- ======= About Section ======= -->
+      <section id="about" class="about" aria-labelledby="about-heading">
+        <div class="container" data-aos="fade-up">
+          <!-- Section Header -->
+          <header class="section-header">
+            <h2 id="about-heading">About Accessibility</h2>
+          </header>
+
+          <!-- Content Row 1 -->
+          <div
+            class="row g-4 g-lg-5 mb-5 d-flex align-items-center"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="col-lg-5">
+              <figure class="about-img">
+                <img
+                  src="assets/img/about-section.svg"
+                  class="img-fluid"
+                  alt="Illustration of diverse individuals collaborating to ensure web accessibility"
+                />
+              </figure>
+            </div>
+            <div class="col-lg-7">
+              <h3>Why Accessibility Matters</h3>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
+                Accessibility is about creating equal opportunities for all
+                users, regardless of their physical, cognitive, or technological
+                abilities. A truly accessible website ensures everyone can
+                navigate, interact with, and enjoy its content seamlessly.
               </p>
-            </div>
-
-            <div class="accordion accordion-flush px-xl-5" id="faqlist">
-
-              <div class="accordion-item" data-aos="fade-up" data-aos-delay="200">
-                <h3 class="accordion-header">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-1">
-                    <i class="bi bi-question-circle question-icon"></i>
-                    Non consectetur a erat nam at lectus urna duis?
-                  </button>
-                </h3>
-                <div id="faq-content-1" class="accordion-collapse collapse" data-bs-parent="#faqlist">
-                  <div class="accordion-body">
-                    Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
-                  </div>
-                </div>
-              </div><!-- # Faq item-->
-
-              <div class="accordion-item" data-aos="fade-up" data-aos-delay="300">
-                <h3 class="accordion-header">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-2">
-                    <i class="bi bi-question-circle question-icon"></i>
-                    Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque?
-                  </button>
-                </h3>
-                <div id="faq-content-2" class="accordion-collapse collapse" data-bs-parent="#faqlist">
-                  <div class="accordion-body">
-                    Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
-                  </div>
-                </div>
-              </div><!-- # Faq item-->
-
-              <div class="accordion-item" data-aos="fade-up" data-aos-delay="400">
-                <h3 class="accordion-header">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-3">
-                    <i class="bi bi-question-circle question-icon"></i>
-                    Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi?
-                  </button>
-                </h3>
-                <div id="faq-content-3" class="accordion-collapse collapse" data-bs-parent="#faqlist">
-                  <div class="accordion-body">
-                    Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis
-                  </div>
-                </div>
-              </div><!-- # Faq item-->
-
-              <div class="accordion-item" data-aos="fade-up" data-aos-delay="500">
-                <h3 class="accordion-header">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-4">
-                    <i class="bi bi-question-circle question-icon"></i>
-                    Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla?
-                  </button>
-                </h3>
-                <div id="faq-content-4" class="accordion-collapse collapse" data-bs-parent="#faqlist">
-                  <div class="accordion-body">
-                    <i class="bi bi-question-circle question-icon"></i>
-                    Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
-                  </div>
-                </div>
-              </div><!-- # Faq item-->
-
-              <div class="accordion-item" data-aos="fade-up" data-aos-delay="600">
-                <h3 class="accordion-header">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-5">
-                    <i class="bi bi-question-circle question-icon"></i>
-                    Tempus quam pellentesque nec nam aliquam sem et tortor consequat?
-                  </button>
-                </h3>
-                <div id="faq-content-5" class="accordion-collapse collapse" data-bs-parent="#faqlist">
-                  <div class="accordion-body">
-                    Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in
-                  </div>
-                </div>
-              </div><!-- # Faq item-->
-
-            </div>
-
-          </div>
-
-          <div class="col-lg-5 align-items-stretch order-1 order-lg-2 img" style='background-image: url("assets/img/faq.jpg");'>&nbsp;</div>
-        </div>
-
-      </div>
-    </section><!-- End F.A.Q Section -->
-
-
-
-    <!-- ======= Recent Blog Posts Section ======= -->
-    <section id="recent-blog-posts" class="recent-blog-posts">
-
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-header">
-          <h2>Blog</h2>
-          <p>Recent posts form our Blog</p>
-        </div>
-
-        <div class="row">
-
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="post-box">
-              <div class="post-img"><img src="assets/img/blog/blog-1.jpg" class="img-fluid" alt=""></div>
-              <div class="meta">
-                <span class="post-date">Tue, December 12</span>
-                <span class="post-author"> / Julia Parker</span>
-              </div>
-              <h3 class="post-title">Eum ad dolor et. Autem aut fugiat debitis voluptatem consequuntur sit</h3>
-              <p>Illum voluptas ab enim placeat. Adipisci enim velit nulla. Vel omnis laudantium. Asperiores eum ipsa est officiis. Modi cupiditate exercitationem qui magni est...</p>
-              <a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="400">
-            <div class="post-box">
-              <div class="post-img"><img src="assets/img/blog/blog-2.jpg" class="img-fluid" alt=""></div>
-              <div class="meta">
-                <span class="post-date">Fri, September 05</span>
-                <span class="post-author"> / Mario Douglas</span>
-              </div>
-              <h3 class="post-title">Et repellendus molestiae qui est sed omnis voluptates magnam</h3>
-              <p>Voluptatem nesciunt omnis libero autem tempora enim ut ipsam id. Odit quia ab eum assumenda. Quisquam omnis aliquid necessitatibus tempora consectetur doloribus...</p>
-              <a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="600">
-            <div class="post-box">
-              <div class="post-img"><img src="assets/img/blog/blog-3.jpg" class="img-fluid" alt=""></div>
-              <div class="meta">
-                <span class="post-date">Tue, July 27</span>
-                <span class="post-author"> / Lisa Hunter</span>
-              </div>
-              <h3 class="post-title">Quia assumenda est et veritatis aut quae</h3>
-              <p>Quia nam eaque omnis explicabo similique eum quaerat similique laboriosam. Quis omnis repellat sed quae consectetur magnam veritatis dicta nihil...</p>
-              <a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-
-    </section><!-- End Recent Blog Posts Section -->
-
-    <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
-      <div class="container">
-
-        <div class="section-header">
-          <h2>Contact Us</h2>
-          <b>Ea vitae aspernatur deserunt voluptatem impedit deserunt magnam occaecati dssumenda quas ut ad dolores adipisci aliquam.</b>
-        </div>
-
-      </div>
-
-      <div class="container">
-
-        <div class="row gy-5 gx-lg-5">
-
-          <div class="col-lg-4">
-
-            <div class="info">
-              <h3>Get in touch</h3>
-              <p>Et id eius voluptates atque nihil voluptatem enim in tempore minima sit ad mollitia commodi minus.</p>
-
-              <div class="info-item d-flex">
-                <i class="bi bi-geo-alt flex-shrink-0"></i>
-                <div>
-                  <h4>Location:</h4>
-                  <p>A108 Adam Street, New York, NY 535022</p>
-                </div>
-              </div><!-- End Info Item -->
-
-              <div class="info-item d-flex">
-                <i class="bi bi-envelope flex-shrink-0"></i>
-                <div>
-                  <h4>Email:</h4>
-                  <p>info@example.com</p>
-                </div>
-              </div><!-- End Info Item -->
-
-              <div class="info-item d-flex">
-                <i class="bi bi-phone flex-shrink-0"></i>
-                <div>
-                  <h4>Call:</h4>
-                  <p>+1 5589 55488 55</p>
-                </div>
-              </div><!-- End Info Item -->
-
-            </div>
-
-          </div>
-
-          <div class="col-lg-8">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-              <div class="row">
-                <div class="col-md-6 form-group">
-                  <label for="name">Name</label>
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" aria-label="visible" required>
-                </div>
-                <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <label for="email">Email</label>
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
-                </div>
-              </div>
-              <div class="form-group mt-3">
-                <label for="subject">Subject</label>
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
-              </div>
-              <div class="form-group mt-3">
-                <label for="exampleFormControlTextarea1">Example textarea</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-              </div>
-              <div class="my-3">
-                
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
-            </form>
-          </div><!-- End Contact Form -->
-
-        </div>
-
-      </div>
-    </section><!-- End Contact Section -->
-
-  </main><!-- End #main -->
-
-  <!-- ======= Footer ======= -->
-  <footer id="footer" class="footer">
-
-    <div class="footer-content">
-      <div class="container">
-        <div class="row">
-
-          <div class="col-lg-3 col-md-6">
-            <div class="footer-info">
-              <h3>HeroBiz</h3>
               <p>
-                A108 Adam Street <br>
-                NY 535022, USA<br><br>
-                <strong>Phone:</strong> +1 5589 55488 55<br>
-                <strong>Email:</strong> info@example.com<br>
+                At our core, we believe accessibility is a right, not an option.
+                By following accessibility guidelines, such as WCAG (Web Content
+                Accessibility Guidelines), we build digital experiences that are
+                inclusive and usable by all.
               </p>
             </div>
           </div>
 
-          <div class="col-lg-2 col-md-6 footer-links">
-            <h4>Useful Links</h4>
-            <ul>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Services</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Privacy policy</a></li>
-            </ul>
+          <!-- Content Row 2 -->
+          <div
+            class="row g-4 g-lg-5 mb-5 d-flex align-items-center"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="col-lg-7">
+              <h3>Our Commitment</h3>
+              <p>
+                We are committed to helping businesses and individuals create
+                websites that prioritize inclusivity. Our approach involves
+                practical tools, thoughtful design, and testing processes to
+                ensure all users can fully engage with your digital content.
+              </p>
+              <p>
+                Whether you're building from scratch or improving an existing
+                site, we provide the expertise to make accessibility a seamless
+                part of your workflow.
+              </p>
+            </div>
+            <div class="col-lg-5">
+              <figure class="about-img">
+                <img
+                  src="assets/img/about1.svg"
+                  class="img-fluid"
+                  alt="An individual using assistive technology to navigate a website"
+                />
+              </figure>
+            </div>
           </div>
 
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Our Services</h4>
-            <ul>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Web Design</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Web Development</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Product Management</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Marketing</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Graphic Design</a></li>
-            </ul>
+          <!-- Content Row 3 -->
+          <div
+            class="row g-4 g-lg-5 mb-5 d-flex align-items-center"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="col-lg-5">
+              <figure class="about-img">
+                <img
+                  src="assets/img/about2.svg"
+                  class="img-fluid"
+                  alt="A team brainstorming ways to enhance accessibility on a whiteboard"
+                />
+              </figure>
+            </div>
+            <div class="col-lg-7">
+              <h3>Join Us in Building a Better Web</h3>
+              <p>
+                Accessibility is not just about meeting standards—it's about
+                fostering inclusion and providing value for everyone. By
+                choosing to prioritize accessibility, you're making the internet
+                a better place for everyone, including people with disabilities,
+                older adults, and those in challenging environments.
+              </p>
+              <p>
+                Ready to start your accessibility journey? Let's work together
+                to make the web a more welcoming and usable space.
+              </p>
+            </div>
           </div>
+        </div>
+      </section>
+      <!-- End About Section -->
 
-          <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4>Our Newsletter</h4>
-            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
-            </form>
-
+      <!-- ======= F.A.Q Section ======= -->
+      <section id="faq " class="faq">
+        <div class="container" data-aos="fade-up">
+          <div class="row gy-4">
+            <div
+              class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch order-2 order-lg-1"
+            >
+              <div class="content px-xl-5">
+                <h3>Frequently Asked <strong>Questions</strong></h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Duis aute irure dolor in reprehenderit
+                </p>
+              </div>
+              <div class="accordion accordion-flush px-xl-5" id="faqlist">
+                <div
+                  class="accordion-item"
+                  data-aos="fade-up"
+                  data-aos-delay="200"
+                >
+                  <h3 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#faq-content-1"
+                      aria-expanded="false"
+                      aria-controls="faq-content-1"
+                    >
+                      <i
+                        class="bi bi-question-circle question-icon"
+                        aria-hidden="true"
+                      ></i>
+                      Non consectetur a erat nam at lectus urna duis?
+                    </button>
+                  </h3>
+                  <div
+                    id="faq-content-1"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#faqlist"
+                  >
+                    <div class="accordion-body">
+                      Feugiat pretium nibh ipsum consequat. Tempus iaculis urna
+                      id volutpat lacus laoreet non curabitur gravida. Venenatis
+                      lectus magna fringilla urna porttitor rhoncus dolor purus
+                      non.
+                    </div>
+                  </div>
+                </div>
+                <!-- # Faq item-->
+                <div
+                  class="accordion-item"
+                  data-aos="fade-up"
+                  data-aos-delay="300"
+                >
+                  <h3 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#faq-content-2"
+                      aria-expanded="false"
+                      aria-controls="faq-content-2"
+                    >
+                      <i
+                        class="bi bi-question-circle question-icon"
+                        aria-hidden="true"
+                      ></i>
+                      Feugiat scelerisque varius morbi enim nunc faucibus a
+                      pellentesque?
+                    </button>
+                  </h3>
+                  <div
+                    id="faq-content-2"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#faqlist"
+                  >
+                    <div class="accordion-body">
+                      Dolor sit amet consectetur adipiscing elit pellentesque
+                      habitant morbi. Id interdum velit laoreet id donec
+                      ultrices. Fringilla phasellus faucibus scelerisque
+                      eleifend donec pretium. Est pellentesque elit ullamcorper
+                      dignissim. Mauris ultrices eros in cursus turpis massa
+                      tincidunt dui.
+                    </div>
+                  </div>
+                </div>
+                <!-- # Faq item-->
+                <div
+                  class="accordion-item"
+                  data-aos="fade-up"
+                  data-aos-delay="400"
+                >
+                  <h3 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#faq-content-3"
+                      aria-expanded="false"
+                      aria-controls="faq-content-3"
+                    >
+                      <i
+                        class="bi bi-question-circle question-icon"
+                        aria-hidden="true"
+                      ></i>
+                      Dolor sit amet consectetur adipiscing elit pellentesque
+                      habitant morbi?
+                    </button>
+                  </h3>
+                  <div
+                    id="faq-content-3"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#faqlist"
+                  >
+                    <div class="accordion-body">
+                      Eleifend mi in nulla posuere sollicitudin aliquam ultrices
+                      sagittis orci. Faucibus pulvinar elementum integer enim.
+                      Sem nulla pharetra diam sit amet nisl suscipit. Rutrum
+                      tellus pellentesque eu tincidunt. Lectus urna duis
+                      convallis convallis tellus. Urna molestie at elementum eu
+                      facilisis sed odio morbi quis.
+                    </div>
+                  </div>
+                </div>
+                <!-- # Faq item-->
+                <div
+                  class="accordion-item"
+                  data-aos="fade-up"
+                  data-aos-delay="500"
+                >
+                  <h3 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#faq-content-4"
+                      aria-expanded="false"
+                      aria-controls="faq-content-4"
+                    >
+                      <i
+                        class="bi bi-question-circle question-icon"
+                        aria-hidden="true"
+                      ></i>
+                      Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla?
+                    </button>
+                  </h3>
+                  <div
+                    id="faq-content-4"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#faqlist"
+                  >
+                    <div class="accordion-body">
+                      <i
+                        class="bi bi-question-circle question-icon"
+                        aria-hidden="true"
+                      ></i>
+                      Dolor sit amet consectetur adipiscing elit pellentesque
+                      habitant morbi. Id interdum velit laoreet id donec
+                      ultrices. Fringilla phasellus faucibus scelerisque
+                      eleifend donec pretium. Est pellentesque elit ullamcorper
+                      dignissim. Mauris ultrices eros in cursus turpis massa
+                      tincidunt dui.
+                    </div>
+                  </div>
+                </div>
+                <!-- # Faq item-->
+                <div
+                  class="accordion-item"
+                  data-aos="fade-up"
+                  data-aos-delay="600"
+                >
+                  <h3 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#faq-content-5"
+                      aria-expanded="false"
+                      aria-controls="faq-content-5"
+                    >
+                      <i
+                        class="bi bi-question-circle question-icon"
+                        aria-hidden="true"
+                      ></i>
+                      Tempus quam pellentesque nec nam aliquam sem et tortor
+                      consequat?
+                    </button>
+                  </h3>
+                  <div
+                    id="faq-content-5"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#faqlist"
+                  >
+                    <div class="accordion-body">
+                      Molestie a iaculis at erat pellentesque adipiscing
+                      commodo. Dignissim suspendisse in est ante in. Nunc vel
+                      risus commodo viverra maecenas accumsan. Sit amet nisl
+                      suscipit adipiscing bibendum est. Purus gravida quis
+                      blandit turpis cursus in.
+                    </div>
+                  </div>
+                </div>
+                <!-- # Faq item-->
+              </div>
+            </div>
+            <div
+              class="col-lg-5 align-items-stretch order-1 order-lg-2 img"
+              style="background-image: url('assets/img/faq.jpg')"
+              aria-hidden="true"
+            >
+              &nbsp;
+            </div>
           </div>
+        </div>
+      </section>
 
+      <!-- End F.A.Q Section -->
+      <!-- ======= Recent Blog Posts Section ======= -->
+      <section id="recent-blog-posts" class="recent-blog-posts">
+        <div class="container" data-aos="fade-up">
+          <div class="section-header">
+            <h2>Blog</h2>
+            <p>Recent posts from our Blog</p>
+          </div>
+          <div class="row">
+            <!-- Blog Post 1 -->
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+              <div class="post-box">
+                <div class="post-img">
+                  <img
+                    src="assets/img/blog/blog-1.jpg"
+                    class="img-fluid"
+                    alt="Image depicting a blog post related to business strategies"
+                  />
+                </div>
+                <div class="meta">
+                  <span class="post-date">Tue, December 12</span>
+                  <span class="post-author"> / Julia Parker</span>
+                </div>
+                <h3 class="post-title">
+                  Eum ad dolor et. Autem aut fugiat debitis voluptatem
+                  consequuntur sit
+                </h3>
+                <p>
+                  Illum voluptas ab enim placeat. Adipisci enim velit nulla. Vel
+                  omnis laudantium. Asperiores eum ipsa est officiis. Modi
+                  cupiditate exercitationem qui magni est...
+                </p>
+                <a
+                  href="blog-details.html"
+                  class="readmore stretched-link"
+                  aria-label="Read more about this blog post"
+                >
+                  <span>Read More</span
+                  ><i class="bi bi-arrow-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+            <!-- Blog Post 2 -->
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="400">
+              <div class="post-box">
+                <div class="post-img">
+                  <img
+                    src="assets/img/blog/blog-2.jpg"
+                    class="img-fluid"
+                    alt="Image representing blog post on social media trends"
+                  />
+                </div>
+                <div class="meta">
+                  <span class="post-date">Fri, September 05</span>
+                  <span class="post-author"> / Mario Douglas</span>
+                </div>
+                <h3 class="post-title">
+                  Et repellendus molestiae qui est sed omnis voluptates magnam
+                </h3>
+                <p>
+                  Voluptatem nesciunt omnis libero autem tempora enim ut ipsam
+                  id. Odit quia ab eum assumenda. Quisquam omnis aliquid
+                  necessitatibus tempora consectetur doloribus...
+                </p>
+                <a
+                  href="blog-details.html"
+                  class="readmore stretched-link"
+                  aria-label="Read more about this blog post"
+                >
+                  <span>Read More</span
+                  ><i class="bi bi-arrow-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+            <!-- Blog Post 3 -->
+            <div class="col-lg-4" data-aos="fade-up" data-aos-delay="600">
+              <div class="post-box">
+                <div class="post-img">
+                  <img
+                    src="assets/img/blog/blog-3.jpg"
+                    class="img-fluid"
+                    alt="Image showing a blog post about technology innovations"
+                  />
+                </div>
+                <div class="meta">
+                  <span class="post-date">Tue, July 27</span>
+                  <span class="post-author"> / Lisa Hunter</span>
+                </div>
+                <h3 class="post-title">
+                  Quia assumenda est et veritatis aut quae
+                </h3>
+                <p>
+                  Quia nam eaque omnis explicabo similique eum quaerat similique
+                  laboriosam. Quis omnis repellat sed quae consectetur magnam
+                  veritatis dicta nihil...
+                </p>
+                <a
+                  href="blog-details.html"
+                  class="readmore stretched-link"
+                  aria-label="Read more about this blog post"
+                >
+                  <span>Read More</span
+                  ><i class="bi bi-arrow-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- End Recent Blog Posts Section -->
+      <!-- ======= Contact Section ======= -->
+      <section id="contact" class="contact">
+        <div class="container">
+          <div class="section-header">
+            <h2>Contact Us</h2>
+            <b>
+              Ea vitae aspernatur deserunt voluptatem impedit deserunt magnam
+              occaecati dssumenda quas ut ad dolores adipisci aliquam.
+            </b>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row gy-5 gx-lg-5">
+            <!-- Contact Info Section -->
+            <div class="col-lg-4">
+              <div class="info">
+                <h3>Get in touch</h3>
+                <p>
+                  Et id eius voluptates atque nihil voluptatem enim in tempore
+                  minima sit ad mollitia commodi minus.
+                </p>
+                <div class="info-item d-flex">
+                  <i class="bi bi-geo-alt flex-shrink-0" aria-hidden="true"></i>
+                  <div>
+                    <h4>Location:</h4>
+                    <p>A108 Adam Street, New York, NY 535022</p>
+                  </div>
+                </div>
+                <!-- End Info Item -->
+                <div class="info-item d-flex">
+                  <i class="bi bi-envelope flex-shrink-0" aria-hidden="true"></i>
+                  <div>
+                    <h4>Email:</h4>
+                    <p>info@example.com</p>
+                  </div>
+                </div>
+                <!-- End Info Item -->
+                <div class="info-item d-flex">
+                  <i class="bi bi-phone flex-shrink-0" aria-hidden="true"></i>
+                  <div>
+                    <h4>Call:</h4>
+                    <p>+1 5589 55488 55</p>
+                  </div>
+                </div>
+                <!-- End Info Item -->
+              </div>
+            </div>
+      
+            <!-- Contact Form Section -->
+            <div class="col-lg-8">
+              <form
+                action="forms/contact.php"
+                method="post"
+                role="form"
+                class="php-email-form"
+                aria-labelledby="contact-form"
+              >
+                <div class="row">
+                  <!-- Name Field -->
+                  <div class="col-md-6 form-group">
+                    <label for="name">Name</label>
+                    <input
+                      type="text"
+                      name="name"
+                      class="form-control"
+                      id="name"
+                      placeholder="Your Name"
+                      aria-label="Enter your name"
+                      required
+                    />
+                  </div>
+                  <!-- Email Field -->
+                  <div class="col-md-6 form-group mt-3 mt-md-0">
+                    <label for="email">Email</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      name="email"
+                      id="email"
+                      placeholder="Your Email"
+                      aria-label="Enter your email address"
+                      required
+                    />
+                  </div>
+                </div>
+      
+                <!-- Subject Field -->
+                <div class="form-group mt-3">
+                  <label for="subject">Subject</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="subject"
+                    id="subject"
+                    placeholder="Subject"
+                    aria-label="Enter the subject of your message"
+                    required
+                  />
+                </div>
+      
+                <!-- Message Field -->
+                <div class="form-group mt-3">
+                  <label for="message">Message</label>
+                  <textarea
+                    class="form-control"
+                    name="message"
+                    id="message"
+                    rows="3"
+                    placeholder="Your Message"
+                    aria-label="Enter your message"
+                    required
+                  ></textarea>
+                </div>
+      
+                <!-- Loading, Error, and Success Messages -->
+                <div class="my-3">
+                  <div class="loading" aria-live="polite">Loading...</div>
+                  <div class="error-message" role="alert" aria-live="assertive"></div>
+                  <div class="sent-message" role="alert" aria-live="assertive">
+                    Your message has been sent. Thank you!
+                  </div>
+                </div>
+      
+                <!-- Submit Button -->
+                <div class="text-center">
+                  <button type="submit" aria-label="Submit your message">
+                    Send Message
+                  </button>
+                </div>
+              </form>
+            </div>
+            <!-- End Contact Form -->
+          </div>
+        </div>
+      </section>
+      
+      <!-- End Contact Section -->
+    </main>
+    <!-- End #main -->
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="footer" role="contentinfo">
+      <div class="footer-legal text-center">
+        <div class="container d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between align-items-center">
+          <div class="d-flex flex-column align-items-center align-items-lg-start">
+            <div class="copyright" aria-live="polite">
+              &copy; Copyright <strong><span>Infostride</span></strong>. All Rights Reserved
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+    <!-- End Footer -->
+    <a
+      href="#"
+      class="scroll-top d-flex align-items-center justify-content-center"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
+    <div id="preloader"></div>
+    <!-- Accesibility Modal -->
+    <div
+      class="modal accessibility-modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              Accessibility Modal
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div
+              class="model-buttonwrap d-flex flex-row flex-wrap justify-content-start"
+            >
+              <button type="button" class="btn btn-primary modal-btn1">
+                Increase Font
+              </button>
+              <button type="button" class="btn btn-primary removeanimation">
+                Remove Animation
+              </button>
+              <button type="button" class="btn btn-primary modal-btn2">
+                Bigger-cursor
+              </button>
+              <button type="button" class="btn btn-primary modal-btn3">
+                Hide-images
+              </button>
+              <button type="button" class="btn btn-primary reading-line">
+                Reading-line
+              </button>
+              <button type="button" class="btn btn-primary changefont">
+                Dyslexic Font
+              </button>
+              <button type="button" class="btn btn-primary brightness">
+                Brightness
+              </button>
+              <button type="button" class="btn btn-primary invert">
+                Invert
+              </button>
+              <button type="button" class="btn btn-primary lineheight">
+                Line-height
+              </button>
+              <button type="button" class="btn btn-primary contrast">
+                Contrast
+              </button>
+              <button type="button" class="btn btn-primary saturation">
+                Saturation
+              </button>
+              <button type="button" class="btn btn-primary grayscale">
+                Grayscale
+              </button>
+              <button type="button" class="btn btn-primary appreadingmask">
+                App Reading mask
+              </button>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-success reset-btn">
+              Reset Settings
+            </button>
+          </div>
         </div>
       </div>
     </div>
+    <div class="accessibility_line"></div>
+    <div
+      class="accessibly-app-reading-mask-top accessibly-app-reading-mask"
+      style="height: 200px"
+    ></div>
+    <div
+      class="accessibly-app-reading-mask-bottom accessibly-app-reading-mask"
+      style="height: 11px"
+    ></div>
+    <!-- Vendor JS Files -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/accessbility.js"></script>
+    <script>
+      document.querySelectorAll(".dropdown > a").forEach((dropdownToggle) => {
+        dropdownToggle.addEventListener("click", (event) => {
+          event.preventDefault();
+          const isExpanded =
+            dropdownToggle.getAttribute("aria-expanded") === "true";
+          dropdownToggle.setAttribute("aria-expanded", !isExpanded);
+          const submenu = dropdownToggle.nextElementSibling;
+          submenu.style.display = isExpanded ? "none" : "block";
+        });
 
-    <div class="footer-legal text-center">
-      <div class="container d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between align-items-center">
-
-        <div class="d-flex flex-column align-items-center align-items-lg-start">
-          <div class="copyright">
-            &copy; Copyright <strong><span>HeroBiz</span></strong>. All Rights Reserved
-          </div>
-          <div class="credits">
-            <!-- All the links in the footer should remain intact. -->
-            <!-- You can delete the links only if you purchased the pro version. -->
-            <!-- Licensing information: https://bootstrapmade.com/license/ -->
-            <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/herobiz-bootstrap-business-template/ -->
-            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-          </div>
-        </div>
-
-        <div class="social-links order-first order-lg-last mb-3 mb-lg-0">
-          <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-          <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-          <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-          <a href="#" class="google-plus"><i class="bi bi-skype"></i></a>
-          <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
-        </div>
-
-      </div>
-    </div>
-
-  </footer><!-- End Footer -->
-
-  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <div id="preloader"></div>
-
-  <!-- Accesibility Modal -->
-<div class="modal accessibility-modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Accessibility Modal</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <div class="model-buttonwrap d-flex flex-row flex-wrap justify-content-start">
-          <button type="button" class="btn btn-primary  modal-btn1">Bigger Text</button>
-          <button type="button" class="btn btn-primary removeanimation">Remove Animation</button>
-          <button type="button" class="btn btn-primary modal-btn2">Bigger-cursor</button>
-          <button type="button" class="btn btn-primary modal-btn3">Hide-images</button>
-          <button type="button" class="btn btn-primary reading-line">Reading-line</button>
-          <button type="button" class="btn btn-primary changefont">Dyslexic Font</button>
-          <button type="button" class="btn btn-primary brightness">Brightness</button>
-          <button type="button" class="btn btn-primary invert">Invert</button>
-          <button type="button" class="btn btn-primary lineheight">Line-height</button>
-          <button type="button" class="btn btn-primary contrast">Contrast</button>
-          <button type="button" class="btn btn-primary saturation">Saturation</button>
-          <button type="button" class="btn btn-primary grayscale">Grayscale</button>
-
-          <button type="button" class="btn btn-primary appreadingmask">App Reading mask</button>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-success reset-btn">Reset Settings</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-  <!-- Vendor JS Files -->
-  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-
-  <!-- Template Main JS File -->
-  
-  <script src="assets/js/main.js"></script>
-  <script src="assets/js/accessbility.js"></script>
- 
-
-  <div class="accessibility_line"></div>
-  <div class="accessibly-app-reading-mask-top accessibly-app-reading-mask" style="height: 200px;"></div>
-  <div class="accessibly-app-reading-mask-bottom accessibly-app-reading-mask" style="height: 11px;"></div>
-</body>
-
+        dropdownToggle.addEventListener("keydown", (event) => {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            dropdownToggle.click();
+          }
+        });
+      });
+    </script>
+  </body>
 </html>
