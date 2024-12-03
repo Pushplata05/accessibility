@@ -12,6 +12,10 @@
   cursor: unset !important;
 }
 
+a{
+  cursor: unset !important;
+}
+
 #preloader:before,
 #preloader:after {
   content: "";
@@ -582,7 +586,7 @@ section {
     display: block !important;
     color: var(--color-secondary);
     font-size: 28px;
-    cursor: pointer;
+    cursor: unset;
     line-height: 0;
     transition: 0.5s;
     position: fixed;
@@ -886,7 +890,7 @@ section {
 
 .hero .carousel-indicators li {
   list-style-type: none;
-  cursor: pointer;
+  cursor: unset;
   background: rgba(var(--color-secondary-rgb), 0.5);
   overflow: hidden;
   border: 0;
@@ -1569,7 +1573,7 @@ section {
   justify-content: center;
   flex-direction: column;
   transition: 0s;
-  cursor: pointer;
+  cursor: unset;
   height: 100%;
 }
 
@@ -2041,7 +2045,7 @@ section {
 }
 
 .portfolio .portfolio-flters li {
-  cursor: pointer;
+  cursor: unset;
   display: inline-block;
   padding: 0;
   font-size: 18px;
