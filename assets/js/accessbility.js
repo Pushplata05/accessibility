@@ -24,7 +24,7 @@ var menuObject = {
   
   // Initial state
   const initialState = {
-    font: 60,
+    font: 28,
     brightness: 100,
     contrast: 100,
     saturation: 100,
@@ -82,35 +82,27 @@ var menuObject = {
   function updateFontStyles() {
     $("body, h1, p").attr("style", `font-family: ${tempstate.fontfamily}; font-size: ${tempstate.font}px !important;`);
   }
-  function updateFontSize(h1font , p ,  span, h3,button,h4){
-    $("h1").attr("style", `font-size: ${h1font}px !important;`);
-    $("p").attr("style", `font-size: ${p}px !important;`);
-    $("span").attr("style", `font-size: ${span}px !important;`);
-    $("h3").attr("style", `font-size: ${h3}px !important;`);
-    // $("button").attr("style", `font-size: ${button}px !important;`);
-    $("h4").attr("style", `font-size: ${h4}px !important;`);
-  }
 
-  var fontincrease = false;
   // Font size increment/decrement logic
   $(".modal-btn1").on("click", function () {
     // Set menuObject.increase_font based on the current font size
-    let h1font = 60;
-    let p = 20;
-    let button = 15;
-    let span = 18;
-    let h3 = 32;
-    let h4 = 24;
-    fontincrease = !fontincrease;
-    console.log(fontincrease, "FOFnr")
-    if (fontincrease) {  
-      updateFontSize(h1font + 4, p + 4,  span+4, h3+4,button+4,h4+4  )
+    menuObject.increase_font = tempstate.font < 50 && !menuObject.decrease_font;
+   
+    if (menuObject.increase_font) {  
+      tempstate.font += 5;
       $(".modal-btn1").html(`<iconify-icon icon="fluent:line-horizontal-1-24-filled"></iconify-icon>Increase Font`);
     } else {
-      updateFontSize(h1font , p ,  span, h3,button,h4  )
+      tempstate.font -= 5;
       $(".modal-btn1").html(`<iconify-icon icon="fluent:line-horizontal-1-24-filled"></iconify-icon>Decrease Font`);
   
+      // Ensure the font size is within the desired range
+      tempstate.font = Math.max(tempstate.font, 28);
     }
+  
+    // Set menuObject.decrease_font based on the current font size
+    menuObject.decrease_font = tempstate.font > 28;
+  
+    updateFontStyles();
   });
    
   $(".removeanimation").on("click", function () {
@@ -158,7 +150,6 @@ var menuObject = {
     if (menuObject.show_images) {
       $(".modal-btn3").html(`<iconify-icon icon="ion:image-sharp"></iconify-icon>Show-Images`)
       $("img").attr("style", `display: none !important;`);
-      $(".img").attr("style", `background: none !important;`);
     } else {
       $(".modal-btn3").html(`<iconify-icon icon="ion:image-sharp"></iconify-icon>Hide-Images`)
       $("img").attr("style", `display: inline-block !important;`);
