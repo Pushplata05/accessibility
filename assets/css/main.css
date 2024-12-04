@@ -8,6 +8,28 @@
   width: 100%;
   height: 100vh;
 }
+.level-bar-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.level-bar {
+  width: 150px;
+  height: 10px;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+}
+
+.level-bar-fill {
+  height: 100%;
+  width: 0;
+  background-color: #4caf50;
+  transition: width 0.3s ease;
+}
+
 [type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
   cursor: unset !important;
 }

@@ -82,28 +82,42 @@ function showReadingMask() {
 function updateFontStyles() {
   $("body, h1, p").attr("style", `font-family: ${tempstate.fontfamily}; font-size: ${tempstate.font}px !important;`);
 }
+let clickCount = 0; // Tracks the number of button clicks
+const maxClicks = 3; // Maximum number of increments or decrements
+const fontChangeStep = 4; // Font size change step in pixels
 
-// Font size increment/decrement logic
 $(".modal-btn1").on("click", function () {
-  // Set menuObject.increase_font based on the current font size
-  menuObject.increase_font = tempstate.font < 50 && !menuObject.decrease_font;
+  // Select all target tags excluding buttons inside .modal-body
+  const targetTags = $("h1, h2, h4, p, span, button:not(.modal-dialog button)");
 
-  if (menuObject.increase_font) {
-    tempstate.font += 5;
-    $(".modal-btn1").html(`<iconify-icon icon="fluent:line-horizontal-1-24-filled"></iconify-icon>Increase Font`);
-  } else {
-    tempstate.font -= 5;
-    $(".modal-btn1").html(`<iconify-icon icon="fluent:line-horizontal-1-24-filled"></iconify-icon>Decrease Font`);
+  targetTags.each(function () {
+    // Get the current font size of the element
+    const currentFontSize = parseInt($(this).css("font-size")) || 16; // Default font size to 16px if undefined
 
-    // Ensure the font size is within the desired range
-    tempstate.font = Math.max(tempstate.font, 28);
+    if (clickCount < maxClicks) {
+      // Increase font size
+      $(this).css("font-size", `${currentFontSize + fontChangeStep}px`);
+    } else {
+      // Decrease font size
+      $(this).css("font-size", `${currentFontSize - fontChangeStep}px`);
+    }
+  });
+
+  // Update the click count
+  clickCount++;
+  if (clickCount === maxClicks * 2) {
+    clickCount = 0; // Reset the cycle after 6 clicks
   }
 
-  // Set menuObject.decrease_font based on the current font size
-  menuObject.decrease_font = tempstate.font > 28;
-
-  updateFontStyles();
+  // Update button text based on the current state
+  if (clickCount < maxClicks) {
+    $(".modal-btn1").html(`<iconify-icon icon="fluent:line-horizontal-1-24-filled"></iconify-icon>Increase Font`);
+  } else {
+    $(".modal-btn1").html(`<iconify-icon icon="fluent:line-horizontal-1-24-filled"></iconify-icon>Decrease Font`);
+  }
 });
+
+
 
 $(".removeanimation").on("click", function () {
   menuObject.hide_animation = !menuObject.hide_animation;
