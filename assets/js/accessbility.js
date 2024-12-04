@@ -223,7 +223,7 @@ $(".changefont").on("click", function () {
   if (menuObject.show_changefont) {
     // Change to normal font
     $(".changefont").html(`<iconify-icon icon="ion:image-sharp"></iconify-icon>Normal Font`);
-    tempstate.fontfamily = "'Zilla Slab', serif";
+    tempstate.fontfamily = "'Yuji Mai', serif";
     tempstate.font = 42;
 
     $("body, h1, p").attr("style", `font-family: ${tempstate.fontfamily}; font-size: ${tempstate.font}px !important;`);
