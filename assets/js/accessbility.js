@@ -9,7 +9,6 @@ var menuObject = {
   is_inverted: false,
   hide_animation: false,
   initialState: {
-    font: 28,
     brightness: 90,
     contrast: 100,
     saturation: 100,
@@ -17,7 +16,7 @@ var menuObject = {
     lineheight: 1.5,
     backgroundColor: "white",
     fontColor: "black",
-    fontFamily: "'Zilla Slab', serif",
+    fontFamily: "'Poppins, sans-serif",
   }
 };
 
@@ -207,16 +206,16 @@ function resetChanges() {
   $(".modal-btn3").html(`Hide Images`);
   $(".reading-line").html(`Reading Line`);
   $(".changefont").html(`Dyslexic Font`);
-  $(".brightness").html(`Brightness`);
-  $(".contrast").html(`Contrast`);
-  $(".saturation").html(`Saturation`);
-  $(".grayscale").html(`Grayscale`);
+  $(".brightness").html(`Increase Brightness`);
+  $(".contrast").html(`Increase Contrast`);
+  $(".saturation").html(`Increase Saturation`);
+  $(".grayscale").html(`Increase Grayscale`);
   $(".appreadingmask").html(`App Reading Mask`);
 
   tempstate = { ...menuObject.initialState };
 
-  $("body").attr("style", `font-family: ${tempstate.fontFamily}; font-size: ${tempstate.font}px !important;`);
-  $("h1, p").attr("style", `font-family: ${tempstate.fontFamily}; font-size: ${tempstate.font}px !important;`);
+  // $("body").attr("style", `font-family: ${tempstate.fontFamily}; font-size: ${tempstate.font}px !important;`);
+  // $("h1, p").attr("style", `font-family: ${tempstate.fontFamily}; font-size: ${tempstate.font}px !important;`);
 
   menuObject.bigger_cursor = false;
   menuObject.show_images = false;

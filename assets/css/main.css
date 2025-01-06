@@ -22,6 +22,10 @@
   overflow: hidden;
   position: relative;
 }
+.modal-footer button.btn.btn-success.reset-btn {
+  background: transparent;
+  color: #21212a;
+}
 
 .level-bar-fill {
   height: 100%;
