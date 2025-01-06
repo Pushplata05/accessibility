@@ -261,7 +261,7 @@ $(document).ready(function () {
 function toggleBrightness() {
   $(".brightness").on("click", function () {
     if (tempstate.brightness === menuObject.initialState.brightness) {
-      tempstate.brightness += 50;
+      tempstate.brightness += 10;
       $(".brightness").html(`Decrease Brightness`);
     } else {
       tempstate.brightness = menuObject.initialState.brightness;
@@ -272,15 +272,24 @@ function toggleBrightness() {
 }
 
 function toggleLineHeight() {
+  const maxClicks = 3;
+  let clickCount = 0;
+
   $(".lineheight").on("click", function () {
-    if (tempstate.lineheight === menuObject.initialState.lineheight) {
+    if (clickCount < maxClicks) {
       tempstate.lineheight += 0.1;
-      $(".lineheight").html(`Decrease Line Height`);
-    } else {
-      tempstate.lineheight = menuObject.initialState.lineheight;
       $(".lineheight").html(`Increase Line Height`);
+    } else {
+      tempstate.lineheight -= 0.1;
+      $(".lineheight").html(`Decrease Line Height`);
     }
+
     $("body").css("line-height", tempstate.lineheight);
+    clickCount++;
+
+    if (clickCount === maxClicks * 2) {
+      clickCount = 0;
+    }
   });
 }
 
