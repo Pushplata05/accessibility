@@ -146,20 +146,13 @@ body .accessibly-app-reading-mask-bottom {
   bottom: 0;
   top: auto;
 }
-.clients {
-  padding: 0 0 60px 0;
+
+
+.modal-footer button.btn.btn-secondary {
+  background: #21272a;
 }
 
-.clients .swiper-slide img {
-  opacity: 0.7;
-  transition: 0.3s;
-  /* filter: grayscale(100); */
-}
 
-.clients .swiper-slide img:hover {
-  filter: none;
-  opacity: 1;
-}
 
 .image-list {
   padding: 0px;

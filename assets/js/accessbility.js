@@ -10,7 +10,7 @@ var menuObject = {
   hide_animation: false,
   initialState: {
     font: 28,
-    brightness: 100,
+    brightness: 90,
     contrast: 100,
     saturation: 100,
     grayscaleValue: 0,
@@ -313,7 +313,7 @@ function toggleSaturation() {
 function toggleGrayscale() {
   $(".grayscale").on("click", function () {
     if (tempstate.grayscaleValue === menuObject.initialState.grayscaleValue) {
-      tempstate.grayscaleValue += 50;
+      tempstate.grayscaleValue += 100;
       $(".grayscale").html(`Decrease Grayscale`);
     } else {
       tempstate.grayscaleValue = menuObject.initialState.grayscaleValue;
