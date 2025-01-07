@@ -15,9 +15,12 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Yuji+Mai&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Yuji+Mai&display=swap"
+      rel="stylesheet"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap"
       rel="stylesheet"
@@ -45,9 +48,7 @@
     <!-- ======= Header ======= -->
     <header id="header" class="header fixed-top" data-scrollto-offset="0">
       <div class="container d-flex align-items-center justify-content-between">
-        <h6>
-          Company Logo
-        </h6>
+        <h6>Company Logo</h6>
         <nav id="navbar" class="navbar" aria-label="Main Navigation">
           <ul>
             <li>
@@ -73,15 +74,13 @@
           data-bs-toggle="modal"
           data-bs-target="#exampleModal"
         >
-        <i class="bi bi-universal-access large-icon"></i>
-
+          <i class="bi bi-universal-access large-icon"></i>
         </button>
       </div>
     </header>
     <!-- End Header -->
 
     <main id="main">
-     
       <!-- Start Hero Section -->
       <section
         id="hero-animated"
@@ -541,30 +540,37 @@
               class="col-lg-5 align-items-center order-1 order-lg-2 img"
               aria-hidden="true"
             >
-              <img class="img-fluid" src="assets/img/faq.jpg" alt="Descriptive image showcasing the FAQ!">
+              <img
+                class="img-fluid"
+                src="assets/img/faq.jpg"
+                alt="Descriptive image showcasing the FAQ!"
+              />
             </div>
           </div>
         </div>
       </section>
 
-    
-      
       <!-- End Contact Section -->
     </main>
     <!-- End #main -->
     <!-- ======= Footer ======= -->
     <footer id="footer" class="footer" role="contentinfo">
       <div class="footer-legal text-center">
-        <div class="container d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between align-items-center">
-          <div class="d-flex flex-column align-items-center align-items-lg-start">
+        <div
+          class="container d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between align-items-center"
+        >
+          <div
+            class="d-flex flex-column align-items-center align-items-lg-start"
+          >
             <div class="copyright" aria-live="polite">
-              &copy; Copyright <strong><span>Infostride</span></strong>. All Rights Reserved
+              &copy; Copyright <strong><span>Infostride</span></strong
+              >. All Rights Reserved
             </div>
           </div>
         </div>
       </div>
     </footer>
-    
+
     <!-- End Footer -->
     <a
       href="#"
@@ -574,7 +580,7 @@
     <div id="preloader"></div>
     <!-- Accesibility Modal -->
     <div
-      class="modal accessibility-modal fade"
+      class="modal widget accessibility-modal fade"
       id="exampleModal"
       tabindex="-1"
       aria-labelledby="exampleModalLabel"
@@ -597,49 +603,174 @@
             <div
               class="model-buttonwrap d-flex flex-row flex-wrap justify-content-start"
             >
-            <button type="button" class="btn btn-primary modal-btn1">
-              Increase Font
-            </button>
-              <button type="button" class="btn btn-primary removeanimation">
-                Remove Animation
-              </button>
-              <button type="button" class="btn btn-primary modal-btn2">
-                Bigger-cursor
-              </button>
-              <button type="button" class="btn btn-primary modal-btn3">
-                Hide-images
-              </button>
-              <button type="button" class="btn btn-primary reading-line">
-                Reading-line
-              </button>
-              <button type="button" class="btn btn-primary appreadingmask">
-                App Reading mask
-              </button>
-              <button type="button" class="btn btn-primary changefont">
-                Dyslexic Font
-              </button>
-              <button type="button" class="btn btn-primary brightness">
-                Brightness
-              </button>
-              <button type="button" class="btn btn-primary invert">
-                Invert
-              </button>
-              <button type="button" class="btn btn-primary lineheight">
-                Line-height
-              </button>
-              <button type="button" class="btn btn-primary contrast">
-                Contrast
-              </button>
-              <button type="button" class="btn btn-primary saturation">
-                Saturation
-              </button>
-              <button type="button" class="btn btn-primary grayscale">
-                Grayscale
-              </button>
+              <div class="d-flex align-items-center mb-3 widget-btn">
+                <button class="btn icon me-2 modal-btn" onclick="toggleFontSize(true)">
+                  <i class="bi bi-plus"></i>
+                </button>
+                <label class="form-check-label" for="toggleAnimation"
+                >Font Size</label>
+                <button class="btn icon modal-btn" onclick="toggleFontSize(false)">
+                  <i class="bi bi-dash"></i>
+                </button>
+              </div>
               
+              <div class="form-check form-switch widget-btn">
+               
+                <label class="form-check-label" for="toggleAnimation"
+                  >Animation</label
+                >
+                <input
+                class="form-check-input"
+                type="checkbox"
+                id="removeanimation"
+                checked
+                onclick="toggleAnimation(this.checked)"
+              />
+              </div>
+              <div class="form-check form-switch widget-btn">
+              
+                <label class="form-check-label" for="toggleCursor"
+                  > Bigger-cursor</label
+                >
+                <input
+                class="form-check-input"
+                type="checkbox"
+                id="removeanimation"
+                
+                onclick="toggleCursor(this.checked)"
+              />
+              </div>
+              
+              <div class="form-check form-switch widget-btn">
+              
+                <label class="form-check-label" for="toggleImages"
+                  >  Hide-images</label
+                >
+                <input
+                class="form-check-input"
+                type="checkbox"
+                id="removeanimation"
+                
+                onclick="toggleImages(this.checked)"
+              />
+              </div>
+              
+              <div class="form-check form-switch widget-btn">
+              
+                <label class="form-check-label" for="toggleReadingLine"
+                  >  Reading-line</label>
+                  <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="removeanimation"
+                  
+                  onclick="toggleReadingLine(this.checked)"
+                />
+              </div>
+              <div class="form-check form-switch widget-btn">
+              
+                <label class="form-check-label" for="toggleReadingMask"
+                  >   Reading mask</label>
+                  <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="toggleReadingMask"
+                  
+                  onclick="toggleReadingMask(this.checked)"
+                />
+              </div>
+
+              <div class="form-check form-switch widget-btn">
+               
+                <label class="form-check-label" for="toggleFontChange"
+                  >  Dyslexic Font</label>
+                  <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="toggleReadingMask"
+                  
+                  onclick="toggleFontChange(this.checked)"
+                />
+              </div>
+            
+             
+
+              <div class="form-check form-switch widget-btn">
+              
+                <label class="form-check-label" for="brightnessSwitch"
+                  >Brightness</label
+                >
+                <input
+                class="form-check-input"
+                type="checkbox"
+                id="brightnessSwitch"
+                onclick="toggleBrightness(this.checked)"
+              />
+              </div>
+              
+              <div class="form-check form-switch widget-btn">
+              
+                <label class="form-check-label" for="toggleInvertColors"
+                  >Invert</label
+                >
+                <input
+                class="form-check-input"
+                type="checkbox"
+                id="brightnessSwitch"
+                onclick="toggleInvertColors(this.checked)"
+              />
+              </div>
+              <div class="d-flex align-items-center mb-3 widget-btn">
+                <button class="btn icon me-2 modal-btn" onclick="toggleLineHeight(true)">
+                  <i class="bi bi-plus"></i>
+                </button>
+                <label class="form-check-label" for="toggleAnimation"
+                >Line-height</label>
+                <button class="btn icon modal-btn" onclick="toggleLineHeight(false)">
+                  <i class="bi bi-dash"></i>
+                </button>
+              </div>
+              <div class="form-check form-switch widget-btn">
+              
+                <label class="form-check-label" for="toggleContrast"
+                  >Contrast</label
+                >
+                <input
+                class="form-check-input"
+                type="checkbox"
+                id="toggleContrast"
+                onclick="toggleSaturation(this.checked)"
+              />
+              </div>
+              <div class="form-check form-switch widget-btn">
+              
+                <label class="form-check-label" for="toggleSaturation"
+                  >Saturation</label
+                >
+                <input
+                class="form-check-input"
+                type="checkbox"
+                id="toggleSaturation"
+                onclick="toggleContrast(this.checked)"
+              />
+              </div>
+              <div class="form-check form-switch widget-btn">
+              
+                <label class="form-check-label" for="toggleGrayscale"
+                  >Grayscale</label
+                >
+                <input
+                class="form-check-input"
+                type="checkbox"
+                id="toggleGrayscale"
+                onclick="toggleGrayscale(this.checked)"
+              />
+              </div>
+            
             </div>
           </div>
           <div class="modal-footer">
+            
             <button type="button" class="btn btn-success reset-btn">
               Reset Settings
             </button>
@@ -650,7 +781,6 @@
             >
               Close
             </button>
-           
           </div>
         </div>
       </div>

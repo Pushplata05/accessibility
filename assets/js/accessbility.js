@@ -13,17 +13,18 @@ var menuObject = {
     brightness: 100,
     contrast: 100,
     saturation: 100,
-    grayscaleValue: 0,
+    // grayscaleValue: 0,
     lineheight: 1.5,
     backgroundColor: "white",
-    fontColor: "black",
-    fontFamily: "'Zilla Slab', serif",
+    // fontColor: "white",
+    fontFamily: "'Poppins', sans-serif",
   }
 };
 
 let tempstate = { ...menuObject.initialState };
 
-function toggleReadingMask() {
+function toggleReadingMask(show = true) {
+  menuObject.show_mask = show;
   const myDivTop = $(".accessibly-app-reading-mask-top");
   const myDivBottom = $(".accessibly-app-reading-mask-bottom");
   const readingMask = $(".accessibly-app-reading-mask");
@@ -63,145 +64,137 @@ function updateFontStyles() {
   $("body, h1, p").attr("style", `font-family: ${tempstate.fontFamily}; font-size: ${tempstate.font}px !important;`);
 }
 
-function toggleFontSize() {
-  const targetTags = $("h1, h2, h4, p, span, button:not(.modal-dialog button)");
+// Toggle font size
+function toggleFontSize(increase = true) {
+  const targetTags = $("h1, h2, h4, p, span, button:not( .modal-btn)");
   const fontChangeStep = 4;
-  const maxClicks = 3;
-  let clickCount = 0;
+  targetTags.each(function () {
+    const currentFontSize = parseInt($(this).css("font-size")) || 16;
 
-  $(".modal-btn1").on("click", function () {
-    targetTags.each(function () {
-      const currentFontSize = parseInt($(this).css("font-size")) || 16;
+    if(currentFontSize >52  && increase){
+      return;
+    }
+    if (increase) {
+      $(this).css("font-size", `${currentFontSize + fontChangeStep}px`);
+    } else {
+      $(this).css("font-size", `${currentFontSize - fontChangeStep}px`);
+    }
+  });
+}
 
-      if (clickCount < maxClicks) {
-        $(this).css("font-size", `${currentFontSize + fontChangeStep}px`);
-      } else {
-        $(this).css("font-size", `${currentFontSize - fontChangeStep}px`);
-      }
+function toggleAnimation(show = true) {
+  menuObject.hide_animation = !show;
+
+  if (menuObject.hide_animation) {
+    // $(".removeanimation").html(`Show Animation`);
+    $('img').removeClass('animated');
+    $("body, h1, p, div, header, section").removeAttr("data-aos");
+  } else {
+    // $(".removeanimation").html(`Hide Animation`);
+    $('img').addClass('animated');
+  }
+}
+
+function toggleCursor(show = true) {
+  menuObject.bigger_cursor = show;
+  if (menuObject.bigger_cursor) {
+    // $(".modal-btn2").text("Default Cursor");
+    $("body").css("cursor", "url('assets/img/cursor (1).png'), auto");
+  } else {
+    // $(".modal-btn2").text("Bigger Cursor");
+    $("body").css("cursor", "auto");
+  }
+}
+
+$(".modal-btn2").on("click", function () {
+  toggleCursor(!menuObject.bigger_cursor);
+});
+
+function toggleImages(show = true) {
+  menuObject.show_images = show;
+
+  if (menuObject.show_images) {
+    $(".modal-btn3").html(`<iconify-icon icon="ion:image-sharp"></iconify-icon>Show Images`);
+    $("img").each(function () {
+      const altText = $(this).attr("alt");
+      $(this).hide().after(`<span class="image-alt-text">${altText}</span>`);
     });
-
-    clickCount++;
-    if (clickCount === maxClicks * 2) {
-      clickCount = 0;
-    }
-
-    if (clickCount < maxClicks) {
-      $(".modal-btn1").html(`<iconify-icon icon="fluent:line-horizontal-1-24-filled"></iconify-icon>Increase Font`);
-    } else {
-      $(".modal-btn1").html(`<iconify-icon icon="fluent:line-horizontal-1-24-filled"></iconify-icon>Decrease Font`);
-    }
-  });
+  } else {
+    $(".modal-btn3").html(`<iconify-icon icon="ion:image-sharp"></iconify-icon>Hide Images`);
+    $("img").show();
+    $(".image-alt-text").remove();
+  }
 }
 
-function toggleAnimation() {
-  $(".removeanimation").on("click", function () {
-    menuObject.hide_animation = !menuObject.hide_animation;
+$(".modal-btn3").on("click", function () {
+  toggleImages(!menuObject.show_images);
+});
 
-    if (menuObject.hide_animation) {
-      $(".removeanimation").html(`Show Animation`);
-      $('img').removeClass('animated');
-      $("body, h1, p, div, header, section").removeAttr("data-aos");
-    } else {
-      $(".removeanimation").html(`Hide Animation`);
-      $('img').addClass('animated');
-    }
-    updateFontStyles();
-  });
+
+function toggleReadingLine(show = true) {
+  menuObject.show_line = show;
+
+  if (menuObject.show_line) {
+    $(".reading-line").html(`<iconify-icon icon="fluent:line-horizontal-1-24-filled"></iconify-icon>Remove Line`);
+    $(".accessibility_line").css("display", "block");
+    $(document).on("mousemove", function (e) {
+      var scrollPosition = $(window).scrollTop();
+      $(".accessibility_line").css("top", e.clientY + scrollPosition + "px");
+    });
+  } else {
+    $(".reading-line").html(`<iconify-icon icon="fluent:line-horizontal-1-24-filled"></iconify-icon>Reading-line`);
+    $(".accessibility_line").css("display", "none");
+    $(document).off("mousemove");
+  }
 }
 
-function toggleCursor() {
-  $(".modal-btn2").on("click", function () {
-    menuObject.bigger_cursor = !menuObject.bigger_cursor;
-    if (menuObject.bigger_cursor) {
-      $(".modal-btn2").text("Default Cursor");
-      $("body").css("cursor", "url('assets/img/cursor (1).png'), auto");
-    } else {
-      $(".modal-btn2").text("Bigger Cursor");
-      $("body").css("cursor", "auto");
-    }
-  });
+$(".reading-line").on("click", function () {
+  toggleReadingLine(!menuObject.show_line);
+});
+
+function toggleFontChange(fontFamily = "'Yuji Mai', serif", fontSize = 42) {
+  menuObject.show_changefont = !menuObject.show_changefont;
+
+  if (menuObject.show_changefont) {
+    $(".changefont").html(`<iconify-icon icon="ion:image-sharp"></iconify-icon>Normal Font`);
+    tempstate.fontFamily = fontFamily;
+    tempstate.font = fontSize;
+  } else {
+    $(".changefont").html(`<iconify-icon icon="fluent:line-horizontal-1-24-filled"></iconify-icon>Dyslexic Font`);
+    tempstate = { ...menuObject.initialState };
+  }
+  updateFontStyles();
 }
 
-function toggleImages() {
-  $(".modal-btn3").on("click", function () {
-    menuObject.show_images = !menuObject.show_images;
+$(".changefont").on("click", function () {
+  toggleFontChange();
+});
 
-    if (menuObject.show_images) {
-      $(".modal-btn3").html(`<iconify-icon icon="ion:image-sharp"></iconify-icon>Show Images`);
-      $("img").each(function () {
-        const altText = $(this).attr("alt") || "No description available";
-        const placeholder = `<p style="font-size: 20px; margin: 0; border:1px solid black; padding:12px;">${altText}</p>`;
-        $(this).hide().after(placeholder);
-      });
-    } else {
-      $(".modal-btn3").html(`<iconify-icon icon="ion:image-sharp"></iconify-icon>Hide Images`);
-      $("img").each(function () {
-        $(this).next("p").remove();
-        $(this).show();
-      });
-    }
-  });
+function toggleInvertColors(invert = true) {
+  menuObject.is_inverted = invert;
+  if (menuObject.is_inverted) {
+    $(".invert").html(`Normal Color`);
+    $("body").css("background-color", "#000000");
+    $("body").css("color", "#ffffff");
+    $("h1, h2, h3, h4, h5, h6").css("color", "#feb45d");
+    $("li").css("color", "#ffffff");
+    $("p").css("color", "#ffffff");
+    $("a").css("color", "#231c98");
+  } else {
+    $(".invert").html(`Invert`);
+    $("body").css("background-color", "#ffffff");
+    $("body").css("color", "#000000");
+    $("h1, h2, h3, h4, h5, h6").css("color", "#000000");
+    $("li").css("color", "#000000");
+    $("p").css("color", "#000000");
+  }
 }
 
+$(".invert").on("click", function () {
+  toggleInvertColors(!menuObject.is_inverted);
+});
 
-function toggleReadingLine() {
-  $(".reading-line").on("click", function () {
-    menuObject.show_line = !menuObject.show_line;
-
-    if (menuObject.show_line) {
-      $(this).html(`<iconify-icon icon="fluent:line-horizontal-1-24-filled"></iconify-icon>Remove Line`);
-      $(".accessibility_line").css("display", "block");
-      $(document).on("mousemove", function (e) {
-        var scrollPosition = $(window).scrollTop();
-        $(".accessibility_line").css("top", e.clientY + scrollPosition + "px");
-      });
-    } else {
-      $(this).html(`<iconify-icon icon="fluent:line-horizontal-1-24-filled"></iconify-icon>Reading-line`);
-      $(".accessibility_line").css("display", "none");
-      $(document).off("mousemove");
-    }
-  });
-}
-
-function toggleFontChange() {
-  $(".changefont").on("click", function () {
-    menuObject.show_changefont = !menuObject.show_changefont;
-
-    if (menuObject.show_changefont) {
-      $(".changefont").html(`<iconify-icon icon="ion:image-sharp"></iconify-icon>Normal Font`);
-      tempstate.fontFamily = "'Yuji Mai', serif";
-      tempstate.font = 42;
-    } else {
-      $(".changefont").html(`<iconify-icon icon="fluent:line-horizontal-1-24-filled"></iconify-icon>Dyslexic Font`);
-      tempstate = { ...menuObject.initialState };
-    }
-    updateFontStyles();
-  });
-}
-
-function toggleInvertColors() {
-  $(".invert").on("click", function () {
-    menuObject.is_inverted = !menuObject.is_inverted;
-    if (menuObject.is_inverted) {
-      $(".invert").html(`Normal Color`);
-      $("body").css("background-color", "#000000");
-      $("body").css("color", "#ffffff");
-      $("h1, h2, h3, h4, h5, h6").css("color", "#feb45d");
-      $("li").css("color", "#ffffff");
-      $("p").css("color", "#ffffff");
-      $("a").css("color", "#231c98");
-    } else {
-      $(".invert").html(`Invert`);
-      $("body").css("background-color", "#ffffff");
-      $("body").css("color", "#000000");
-      $("h1, h2, h3, h4, h5, h6").css("color", "#000000");
-      $("li").css("color", "#000000");
-      $("p").css("color", "#000000");
-    }
-  });
-}
-
-function resetChanges() {
+function resetChanges(removeToggles = true) {
   $(".modal-btn1").html(`Increase Font`);
   $(".modal-btn2").html(`Bigger Cursor`);
   $(".modal-btn3").html(`Hide Images`);
@@ -215,8 +208,8 @@ function resetChanges() {
 
   tempstate = { ...menuObject.initialState };
 
-  // $("body").attr("style", `font-family: ${tempstate.fontFamily}; font-size: ${tempstate.font}px !important;`);
-  // $("h1, p").attr("style", `font-family: ${tempstate.fontFamily}; font-size: ${tempstate.font}px !important;`);
+  $("body").attr("style", `font-family: ${tempstate.fontFamily}; `);
+  $("h1, p").attr("style", `font-family: ${tempstate.fontFamily}; `);
 
   menuObject.bigger_cursor = false;
   menuObject.show_images = false;
@@ -226,10 +219,12 @@ function resetChanges() {
   menuObject.is_inverted = false;
   menuObject.hide_animation = false;
 
-  toggleReadingMask();
-  $(".accessibility_line").css("display", "none");
-  $("body").css("cursor", "auto");
-  $("img").show();
+  if (removeToggles) {
+    toggleReadingMask();
+    $(".accessibility_line").css("display", "none");
+    $("body").css("cursor", "auto");
+    $("img").show();
+  }
 
   $("html").css("filter", `brightness(${tempstate.brightness}%) contrast(${tempstate.contrast}%) saturate(${tempstate.saturation}%) grayscale(${tempstate.grayscaleValue}%)`);
   $("body").css("line-height", tempstate.lineheight);
@@ -244,84 +239,69 @@ $(document).ready(function () {
     toggleReadingMask();
   });
 
-  toggleFontSize();
-  toggleAnimation();
-  toggleCursor();
-  toggleImages();
-  // toggleReadingLine(); // Duplicate call removed
-  toggleFontChange();
-  toggleInvertColors();
-  toggleReadingLine();
-
   $(".reset-btn").on("click", function () {
     resetChanges();
   });
 });
 
-function toggleBrightness() {
-  $(".brightness").on("click", function () {
-    if (tempstate.brightness === menuObject.initialState.brightness) {
-      tempstate.brightness += 50;
-      $(".brightness").html(`Decrease Brightness`);
+function toggleBrightness(increase = true) {
+  const brightnessStep = 20;
+  // $(".brightness").on("click", function () {
+    if (increase) {
+      tempstate.brightness += brightnessStep;
     } else {
-      tempstate.brightness = menuObject.initialState.brightness;
-      $(".brightness").html(`Increase Brightness`);
+      tempstate.brightness -= brightnessStep;
     }
+    // $(".brightness").html(`Brightness: ${tempstate.brightness}%`);
     $("html").css("filter", `brightness(${tempstate.brightness}%)`);
-  });
+  // });
+}
+ 
+
+function toggleLineHeight(increase = true) {
+  const lineHeightStep = 0.1;
+  if (increase) {
+    tempstate.lineheight += lineHeightStep;
+  } else {
+    tempstate.lineheight -= lineHeightStep;
+  }
+  $("body").css("line-height", tempstate.lineheight);
 }
 
-function toggleLineHeight() {
-  $(".lineheight").on("click", function () {
-    if (tempstate.lineheight === menuObject.initialState.lineheight) {
-      tempstate.lineheight += 0.1;
-      $(".lineheight").html(`Decrease Line Height`);
-    } else {
-      tempstate.lineheight = menuObject.initialState.lineheight;
-      $(".lineheight").html(`Increase Line Height`);
-    }
-    $("body").css("line-height", tempstate.lineheight);
-  });
+function toggleContrast(increase = true) {
+  const contrastStep = 20;
+  if (increase) {
+    tempstate.contrast += contrastStep;
+  } else {
+    tempstate.contrast -= contrastStep;
+  }
+  $("html").css("filter", `contrast(${tempstate.contrast}%)`);
 }
 
-function toggleContrast() {
-  $(".contrast").on("click", function () {
-    if (tempstate.contrast === menuObject.initialState.contrast) {
-      tempstate.contrast += 50;
-      $(".contrast").html(`Decrease Contrast`);
-    } else {
-      tempstate.contrast = menuObject.initialState.contrast;
-      $(".contrast").html(`Increase Contrast`);
-    }
-    $("html").css("filter", `contrast(${tempstate.contrast}%)`);
-  });
+function toggleSaturation(increase = true) {
+  const saturationStep = 20;
+  if (increase) {
+    tempstate.saturation += saturationStep;
+  } else {
+    tempstate.saturation -= saturationStep;
+  }
+  $("html").css("filter", `saturate(${tempstate.saturation}%)`);
 }
 
-function toggleSaturation() {
-  $(".saturation").on("click", function () {
-    if (tempstate.saturation === menuObject.initialState.saturation) {
-      tempstate.saturation += 50;
-      $(".saturation").html(`Decrease Saturation`);
-    } else {
-      tempstate.saturation = menuObject.initialState.saturation;
-      $(".saturation").html(`Increase Saturation`);
-    }
-    $("html").css("filter", `saturate(${tempstate.saturation}%)`);
-  });
+function toggleGrayscale(shouldShow) {
+  if (shouldShow) {
+    tempstate.grayscaleValue = 100;
+    $(".grayscale").html("Decrease Grayscale");
+    $("#elementToToggle").show(); // Show the element
+  } else {
+    tempstate.grayscaleValue = 0;
+    $(".grayscale").html("Increase Grayscale");
+    $("#elementToToggle").hide(); // Hide the element
+  }
+  $("html").css("filter", `grayscale(${tempstate.grayscaleValue}%)`);
 }
 
-function toggleGrayscale() {
-  $(".grayscale").on("click", function () {
-    if (tempstate.grayscaleValue === menuObject.initialState.grayscaleValue) {
-      tempstate.grayscaleValue += 50;
-      $(".grayscale").html(`Decrease Grayscale`);
-    } else {
-      tempstate.grayscaleValue = menuObject.initialState.grayscaleValue;
-      $(".grayscale").html(`Increase Grayscale`);
-    }
-    $("html").css("filter", `grayscale(${tempstate.grayscaleValue}%)`);
-  });
-}
+
 
 toggleBrightness();
 toggleLineHeight();

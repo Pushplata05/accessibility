@@ -87,7 +87,7 @@ button.btn.btn-primary.border-0.btn-getstarted.scrollto.accessbility-logo {
 }
 
 h1{
-  font-size: 60px;
+  font-size: 48px;
   font-weight: 400;
   line-height: 1.3em;
 }
@@ -181,6 +181,62 @@ body .accessibly-app-reading-mask-bottom {
   justify-content: center;
   align-items: center;
   padding: 0px;
+}
+/* widget-button */
+.widget-btn {
+  font-size: 16px;
+  color: var(--color-white);
+  background: linear-gradient(180deg, #3591ff 19.03%, #056bca);
+  padding: 8px 23px;
+  border-radius: 4px;
+  transition: 0.3s;
+  font-family: var(--font-secondary);
+  border: 0px;
+  display: flex;
+  align-items: center;
+  width: 217px;
+  justify-content: center;
+  height: 52px;
+  margin: 0px 12px 12px;
+}
+.widget label {
+  display: inline-block;
+  width: 100%;
+  display: flex;
+}
+.model-buttonwrap button.icon{
+  width: 31px;
+  height: 31px;
+  /* margin-right: 32px; */
+  /* padding: 2px; */
+  border-radius: 100%;
+  margin-bottom: 0px;
+  display: flex;
+  align-items: center;
+  background: white;
+  justify-content: center;
+}
+
+
+
+ i.bi.bi-plus,
+ i.bi.bi-dash {
+  font-size: 24px;
+  font-weight: 500;
+}
+button.btn.btn-primary.modal-btn2 {
+  font-size: 16px;
+  color: var(--color-white);
+  background: linear-gradient(180deg, #3591ff 19.03%, #056bca);
+  padding: 8px 23px;
+  border-radius: 4px;
+  transition: 0.3s;
+  font-family: var(--font-secondary);
+  border: 0px;
+  display: flex;
+  align-items: center;
+  width: auto;
+  height: 100%;
 }
 /*--------------------------------------------------------------
 # Sections & Section Header
@@ -668,7 +724,7 @@ section {
 }
 .hero-animated h1 {
   margin: 0 0 10px 0;
-  font-size: 60px;
+  font-size: 42px;
   font-weight: 400;
   line-height: 1.3em;
   color: var(--color-secondary);
@@ -3314,13 +3370,7 @@ section {
 .accessibility-modal .modal-dialog .modal-body {
     padding: 32px 32px;
 }
-.model-buttonwrap button {
-    min-width: 222px;
-    margin-right: 32px;
-    padding: 13px 0px;
-    border-radius: 8px;
-    margin-bottom: 16px;
-}
+
 .model-buttonwrap button:nth-child(3),.model-buttonwrap button:nth-child(6),.model-buttonwrap button:nth-child(9) {
     margin-right: 0px;
 }
