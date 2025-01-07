@@ -71,7 +71,10 @@ function toggleFontSize(increase = true) {
   targetTags.each(function () {
     const currentFontSize = parseInt($(this).css("font-size")) || 16;
 
-    if(currentFontSize >52  && increase){
+    if (currentFontSize > 52 && increase) {
+      return;
+    }
+    if (currentFontSize <= 18 && !increase) {
       return;
     }
     if (increase) {
