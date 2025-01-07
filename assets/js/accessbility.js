@@ -9,14 +9,15 @@ var menuObject = {
   is_inverted: false,
   hide_animation: false,
   initialState: {
-    brightness: 90,
+    font: 28,
+    brightness: 100,
     contrast: 100,
     saturation: 100,
     grayscaleValue: 0,
     lineheight: 1.5,
     backgroundColor: "white",
     fontColor: "black",
-    fontFamily: "'Poppins, sans-serif",
+    fontFamily: "'Zilla Slab', serif",
   }
 };
 
@@ -206,10 +207,10 @@ function resetChanges() {
   $(".modal-btn3").html(`Hide Images`);
   $(".reading-line").html(`Reading Line`);
   $(".changefont").html(`Dyslexic Font`);
-  $(".brightness").html(`Increase Brightness`);
-  $(".contrast").html(`Increase Contrast`);
-  $(".saturation").html(`Increase Saturation`);
-  $(".grayscale").html(`Increase Grayscale`);
+  $(".brightness").html(`Brightness`);
+  $(".contrast").html(`Contrast`);
+  $(".saturation").html(`Saturation`);
+  $(".grayscale").html(`Grayscale`);
   $(".appreadingmask").html(`App Reading Mask`);
 
   tempstate = { ...menuObject.initialState };
@@ -260,7 +261,7 @@ $(document).ready(function () {
 function toggleBrightness() {
   $(".brightness").on("click", function () {
     if (tempstate.brightness === menuObject.initialState.brightness) {
-      tempstate.brightness += 10;
+      tempstate.brightness += 50;
       $(".brightness").html(`Decrease Brightness`);
     } else {
       tempstate.brightness = menuObject.initialState.brightness;
@@ -271,24 +272,15 @@ function toggleBrightness() {
 }
 
 function toggleLineHeight() {
-  const maxClicks = 3;
-  let clickCount = 0;
-
   $(".lineheight").on("click", function () {
-    if (clickCount < maxClicks) {
+    if (tempstate.lineheight === menuObject.initialState.lineheight) {
       tempstate.lineheight += 0.1;
-      $(".lineheight").html(`Increase Line Height`);
-    } else {
-      tempstate.lineheight -= 0.1;
       $(".lineheight").html(`Decrease Line Height`);
+    } else {
+      tempstate.lineheight = menuObject.initialState.lineheight;
+      $(".lineheight").html(`Increase Line Height`);
     }
-
     $("body").css("line-height", tempstate.lineheight);
-    clickCount++;
-
-    if (clickCount === maxClicks * 2) {
-      clickCount = 0;
-    }
   });
 }
 
@@ -321,7 +313,7 @@ function toggleSaturation() {
 function toggleGrayscale() {
   $(".grayscale").on("click", function () {
     if (tempstate.grayscaleValue === menuObject.initialState.grayscaleValue) {
-      tempstate.grayscaleValue += 100;
+      tempstate.grayscaleValue += 50;
       $(".grayscale").html(`Decrease Grayscale`);
     } else {
       tempstate.grayscaleValue = menuObject.initialState.grayscaleValue;
