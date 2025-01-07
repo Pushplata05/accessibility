@@ -66,7 +66,7 @@ function updateFontStyles() {
 
 // Toggle font size
 function toggleFontSize(increase = true) {
-  const targetTags = $("h1, h2, h4, p, span, button:not( .modal-btn)");
+  const targetTags = $("h1, h2, h4, p, span, button:not( .modal-btn, .reset-btn, .btn-secondary, .btn-close)");
   const fontChangeStep = 4;
   targetTags.each(function () {
     const currentFontSize = parseInt($(this).css("font-size")) || 16;
@@ -195,17 +195,6 @@ $(".invert").on("click", function () {
 });
 
 function resetChanges(removeToggles = true) {
-  $(".modal-btn1").html(`Increase Font`);
-  $(".modal-btn2").html(`Bigger Cursor`);
-  $(".modal-btn3").html(`Hide Images`);
-  $(".reading-line").html(`Reading Line`);
-  $(".changefont").html(`Dyslexic Font`);
-  $(".brightness").html(`Brightness`);
-  $(".contrast").html(`Contrast`);
-  $(".saturation").html(`Saturation`);
-  $(".grayscale").html(`Grayscale`);
-  $(".appreadingmask").html(`App Reading Mask`);
-
   tempstate = { ...menuObject.initialState };
 
   $("body").attr("style", `font-family: ${tempstate.fontFamily}; `);
@@ -218,15 +207,15 @@ function resetChanges(removeToggles = true) {
   menuObject.show_changefont = false;
   menuObject.is_inverted = false;
   menuObject.hide_animation = false;
+  
+  toggleReadingMask(false);
+  $(".accessibility_line").css("display", "none");
+  $("body").css("cursor", "auto");
+  $("img").show();
 
-  if (removeToggles) {
-    toggleReadingMask();
-    $(".accessibility_line").css("display", "none");
-    $("body").css("cursor", "auto");
-    $("img").show();
-  }
+  $(".toggle-switch").prop("checked", false);
 
-  $("html").css("filter", `brightness(${tempstate.brightness}%) contrast(${tempstate.contrast}%) saturate(${tempstate.saturation}%) grayscale(${tempstate.grayscaleValue}%)`);
+  $("html").css("filter", `brightness(100%)`);
   $("body").css("line-height", tempstate.lineheight);
   $("body").css("background-color", tempstate.backgroundColor);
   $("body").css("color", tempstate.fontColor);
@@ -248,13 +237,11 @@ function toggleBrightness(increase = true) {
   const brightnessStep = 20;
   // $(".brightness").on("click", function () {
     if (increase) {
-      tempstate.brightness += brightnessStep;
+      $("html").css("filter", `brightness(120%)`);
     } else {
-      tempstate.brightness -= brightnessStep;
+      $("html").css("filter", `brightness(100%)`);
     }
-    // $(".brightness").html(`Brightness: ${tempstate.brightness}%`);
-    $("html").css("filter", `brightness(${tempstate.brightness}%)`);
-  // });
+    
 }
  
 

@@ -204,9 +204,11 @@ body .accessibly-app-reading-mask-bottom {
   width: 100%;
   display: flex;
 }
+
+
 .model-buttonwrap button.icon{
-  width: 31px;
-  height: 31px;
+  width: 24px;
+  height: 24px;
   /* margin-right: 32px; */
   /* padding: 2px; */
   border-radius: 100%;
@@ -217,11 +219,24 @@ body .accessibly-app-reading-mask-bottom {
   justify-content: center;
 }
 
-
+button.btn.icon.modal-btn:hover,
+button.btn.icon.modal-btn:active,
+button.btn.icon.modal-btn:focus,
+button.btn.icon.modal-btn:focus-within,
+button.btn.icon.modal-btn:focus-visible
+{
+  background: #1175d8;
+  color: white;
+  border: 1px solid white;
+}
+button.btn.icon.me-2.modal-btn:hover, button.btn.icon.me-2.modal-btn:active {
+  background: #1175d8;
+  color: white;
+}
 
  i.bi.bi-plus,
  i.bi.bi-dash {
-  font-size: 24px;
+  font-size: 18px;
   font-weight: 500;
 }
 button.btn.btn-primary.modal-btn2 {
